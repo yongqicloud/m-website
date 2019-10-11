@@ -1,0 +1,27 @@
+.catalogs {
+  width: 100%;
+  height: 100%;
+  padding: .14rem;
+  font-size: 0; }
+  .catalogs .catalog {
+    font-size: 14px;
+    display: inline-block;
+    width: calc((100% - .2rem) / 3);
+    height: 1.04rem;
+    margin: 0 .1rem .1rem 0;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    border-radius: .04rem; }
+  .catalogs .catalog:nth-child(3n) {
+    margin-right: 0; }
+  .catalogs .catalog-icon {
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    margin: .15rem auto .08rem;
+    background: url(https://static.missevan.com/app/46.png) no-repeat;
+    background-position: 50%;
+    background-size: 100%; }
+
+/*# sourceMappingURL=classification.css.map */

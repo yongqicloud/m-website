@@ -1,0 +1,10 @@
+<div class="list-container">
+    <ul class="tab-list">
+        <li class="tab">音单</li>
+        <li class="tab active">推荐</li>
+        <li class="tab">分类</li>
+    </ul>
+    <div class="tab-content">
+        
+    </div>
+</div>

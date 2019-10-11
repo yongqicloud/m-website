@@ -1,0 +1,28 @@
+
+<div class="index-container"> 
+    <header>
+        <div class="content">
+            <a href="/" >
+                <i class="logo"></i>
+            </a>
+            <div class="actions">
+                <a href="">
+                    <i class="search"></i>
+                </a>
+                <i class="menu"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="list-container">
+            <ul class="tab-list">
+                <li data-to="soundList" class="tab">音单</li>
+                <li data-to="position" class="tab active">推荐</li>
+                <li data-to="classification" class="tab">分类</li>
+            </ul>
+            <div class="tab-content">
+                
+            </div>
+        </div>
+    </main>
+</div>

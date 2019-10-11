@@ -1,0 +1,10 @@
+@import './variable';
+#root{
+    height: 100%;
+}
+body{
+    background: $mainBgColor; 
+}
+a{
+    color: #000;
+}

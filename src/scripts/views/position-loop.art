@@ -1,0 +1,110 @@
+<div>
+        <div id="banner">
+            <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    {{each banner}}
+                    <div class="swiper-slide">
+                        <a href="" class="banner-link" style="background-image: url({{$value.pic}})">
+
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                    <span class="swiper-pagination-bullet"></span>
+                </div>
+            </div>
+        </div>
+        <div class="Panel Sound">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <div class="home-panel-title">
+                        <i class="sounds"></i>
+                        人气M音
+                    </div>
+                </div>
+                <div class="panel-nav">
+                    <a href="">
+                        排行榜
+                        <em></em>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                {{each sound}}
+                {{if $index <= 2}}
+                <a href="" class="comic-box">
+                    <img src="{{$value.front_cover}}" alt="" class="cover">
+                    <div class="title">
+                        {{$value.soundstr}}
+                    </div>
+                    <div class="detail">
+                        <span class="item play-times">{{$value.view_count}}</span>
+                        <span class="item comments">{{$value.comment_count}}</span>
+                    </div>
+                </a>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="Panel">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <div class="home-panel-title">
+                        <i class="channel"></i>
+                        频道
+                    </div>
+                </div>
+                <div class="panel-nav">
+                    <a href="" >
+                        更多
+                        <em></em>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                {{each comic}}
+                <a href="" class="set-auto">
+                    <div class="img-box" style="background-image: url('{{$value.smallpic}}')">
+                        <div class="follow">
+                            <span>{{$value.follow_num}}</span>
+                        </div>
+                    </div>
+                    <div class="title">{{$value.name}}</div>
+                </a>
+                {{/each}}
+            </div>
+        </div>
+        {{each list}}
+        <div class="Panel">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <div class="home-panel-title channel">
+                        <i class="comic catalog-icon-{{$value.id}}"></i>
+                        {{$value.title}}
+                    </div>
+                </div>
+                <div class="panel-nav">
+                    <a href="">
+                        更多
+                        <em></em>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                {{each $value.objects_point}}
+                <a href="" class="comic-box">
+                    <img src="https://static.missevan.com/coversmini/{{$value.cover_image}}" alt="" class="cover">
+                    <div class="title">
+                        {{$value.soundstr}}
+                    </div>
+                    <div class="detail">
+                        <span class="item play-times">{{$value.view_count}}</span>
+                        <span class="item comments">{{$value.comment_count}}</span>
+                    </div>
+                </a>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+</div>
