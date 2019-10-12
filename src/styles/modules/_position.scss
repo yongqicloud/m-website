@@ -20,6 +20,14 @@
                 border-color: #000;
 
             }
+            &.set-bgcolor{
+                background: #fff;
+                animation: bgcolor.2s;
+            }
+            @keyframes bgcolor {
+                from {background: lightblue;}
+                to {background: #fff;}
+            }
         }
         .tab::after{
             content: "";

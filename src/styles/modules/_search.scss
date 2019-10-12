@@ -1,0 +1,40 @@
+.search-page{
+    .search-header{
+        display: block;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: .40rem;
+        padding: .10rem;
+        font-size: .14rem;
+        color: #424242;
+        position: relative;
+        &::after{
+            content: "";
+            width: 96%;
+            height: 100%;
+            border-bottom: 1px solid #ddd;
+            position: absolute;
+            top: 0;
+            left: 2%;
+
+        }
+    }
+    .search-content{
+        padding: .1rem;;
+        .search-tag{
+            display: inline-block;
+            position: relative;
+            padding: 4px 10px;
+            margin: 5px 6px;
+            color: #9e9e9e;
+            border: 1px solid #9e9e9e;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            background-color: #fff;
+            font-size: 12px;
+        }
+    }
+}

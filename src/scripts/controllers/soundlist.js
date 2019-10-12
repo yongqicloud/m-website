@@ -4,7 +4,7 @@ const BSscroll = require('better-scroll');
 class Sound{
     constructor(){
         // this.render();
-        this.pageNo = 2;
+        this.pageNo = 0;
     }
     async render(){
         let result = await soundListModel.get({

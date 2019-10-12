@@ -8,6 +8,8 @@ import soundListControllor from '../controllers/soundlist';
 import positionControllor from '../controllers/position';
 import classificationControllor from '../controllers/classification';
 
+import searchControllor from '../controllers/search';
+
 class Router{
     constructor(){
         this.render();
@@ -15,36 +17,45 @@ class Router{
     render(){
         window.addEventListener('load',this.handlePageload.bind(this));
         window.addEventListener('hashchange',this.handleHashchange.bind(this));
-
     }
     renderDOM(hash){
         let pageControllers = {
             soundListControllor,
             positionControllor,
-            classificationControllor
+            classificationControllor,
+            searchControllor
         }
         pageControllers[hash+'Controllor'].render();
-        
     }
     handlePageload(){
         let hash = location.hash.slice(1) || 'position';
-        indexController.render();
         location.hash = hash;
         this.renderDOM(hash);
         this.setActiveClass(hash);
     }
     handleHashchange(e){
+        
         defaultloadingController.render();
         let hash = location.hash.slice(1);
-        // console.log(hash);
+        console.log(hash);
         this.renderDOM(hash);
         this.setActiveClass(hash);
-
     }
     setActiveClass(hash){
+        if(hash === 'search'){
+            $('header').addClass('Search')
+            $('.tab-list').css({
+                display : 'none'
+            })
+        }else{
+            $('header').removeClass('Search');
+            $('.tab-list').css({
+                display : 'flex'
+            })
+        }
         $(`.tab[data-to=${hash}]`).addClass('active').siblings().removeClass('active');
+        $(`.tab[data-to=${hash}]`).addClass('set-bgcolor').siblings().removeClass('set-bgcolor');
         
     }
 }
 new Router();
-// defaultloadingController.render();

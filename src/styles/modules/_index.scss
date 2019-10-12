@@ -7,7 +7,7 @@
     header {
         height: .40rem;
         background: #000;
-
+        position: relative;
         .content {
             height: 100%;
             padding: 10px;
@@ -30,6 +30,48 @@
             .actions{
                 width: .84rem;
                 display: flex;
+                .search-input{
+                    display: none;
+                    flex: 1 1 auto;
+                    position: relative;
+                    border-radius: .04rem;
+                    border: none;
+                    >span{
+                        display: block;
+                        position: absolute;
+                        top: 3px;
+                        left: 10px;
+                        width: 14px;
+                        height: 14px;
+                        background: #fff url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+                        background-position: -247px -87px;
+                        -webkit-background-size: 262px 234px;
+                        -moz-background-size: 262px 234px;
+                        background-size: 262px 234px;
+                        // opacity: .3;
+                        z-index: 100;
+                    }
+                    input{
+                        position: absolute;
+                        top: -.05rem;
+                        height: .3rem;
+                        width: 100%;
+                        white-space: nowrap;
+                        -o-text-overflow: ellipsis;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        border-radius: .04rem;
+                        border: none;
+                        padding: .06rem .1rem .06rem .3rem;
+                    }
+                }
+                .btn-text{
+                    margin: 0 .10rem 0;
+                    font-size: .12rem;
+                    line-height: .2rem;
+                    color: #fff;
+                    display: none;
+                }
                 // 公用背景图
                 .search,.menu{
                     width: .22rem;
@@ -44,7 +86,6 @@
                         width: .22rem;
                         height: .2rem;
                         margin: 0 .2rem;
-                        
                         background-position: -2.23rem -.22rem;
                     }
                 }
@@ -55,8 +96,167 @@
                 
             }
         }
-    }
+        #UserBar{
+            position: fixed;
+            width: 100%;
+            top: .4rem;
+            left: 100%;
+            height: calc(100vh - .4rem);
+            background: #000;
+            z-index: 100;
+            transition: left .5s ease-in-out;
+            .row{
+                width: 100%;
+                color: #fff;
+                display: block;
+                position: relative;
+                background-color: #3d3d3d;
+            }
+            .row::after{
+                content: "";
+                display: block;
+                position: absolute;
+                width: .08rem;
+                height: .14rem;
+                right: .1rem;
+                top: calc(50% - .07rem);
+                background: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+                background-position: -247px -202px;
+                -webkit-background-size: 262px 234px;
+                -moz-background-size: 262px 234px;
+                background-size: 262px 234px;
 
+            }
+            .icon{
+                line-height: 38px;
+                font-size: 16px;
+                padding: 0 10px;
+                padding-left: 36px;
+                margin-bottom: .01rem;
+            }
+            .icon::before{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 11px;
+                left: 10px;
+                height: 16px;
+                width: 16px;
+                background-repeat: no-repeat;
+            }
+            .home::before{
+                background: url(https://static.missevan.com/assets/m/images/build/sprite-svg.b95276e7.svg) no-repeat -2px -43px/82px 61px;
+
+            }
+            .audio::before{
+                background: url(https://static.missevan.com/assets/m/images/build/sprite-svg.b95276e7.svg) no-repeat -46px -2px/82px 61px;
+            }
+            .wallet::before{
+                background: url(https://static.missevan.com/assets/m/images/build/sprite-svg.b95276e7.svg) no-repeat -22px -43px/82px 61px;
+            }
+            .user{
+                display: flex;;
+                height: 1.1rem;
+                padding: .2rem .3rem;
+                margin-bottom: .2rem;
+                justify-content: flex-start;
+                .avatar{
+                    width: .7rem;
+                    height: .7rem;
+                    border-radius: 50%;
+                    img{
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .details{
+                    // display: inline-block;
+                    height: 100%;
+                    width: calc(100% - 150px);
+                    padding: .1rem .2rem;
+                    line-height: .5rem;
+                    font-size: .16rem;
+                }
+
+
+            }
+        }
+        .suggest-keyword{
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            height: -webkit-calc(100vh - 40px);
+            height: -moz-calc(100vh - 40px);
+            height: calc(100vh - 40px);
+            padding-left: 10px;
+            background-color: #f5f5f5;
+            font-size: 14px;
+            z-index: 50;
+            .keyword-container{
+                position: relative;
+                height: 40px;
+                border-bottom: 1px solid #e0e0e0;
+                line-height: 40px;
+                .keywords{
+                    color: #e63c3c;
+                }
+            }
+            .suggest-list{
+                position: relative;
+                .suggest-item{
+                    display: block;
+                    width:100%;
+                    height: .4rem;
+                    line-height: .4rem;
+                    .search-icon{
+                        display: inline-block;
+                        position: relative;
+                        width: 13px;
+                        height: 13px;
+                        margin: 14px 10px 0 0;
+                        background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png);
+                        background-position: -247px -103px;
+                        -webkit-background-size: 262px 234px;
+                        -moz-background-size: 262px 234px;
+                        background-size: 262px 234px;
+                        vertical-align: top;
+                    }
+                    .item-content{
+                        width: calc(100% - 30px);
+                        white-space: nowrap;
+                        -o-text-overflow: ellipsis;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        display: inline-block;
+                        position: relative;
+                        height: 40px;
+                        color: #3d3d3d;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+    .Search{
+        .content{
+            .logo{
+                display: none;
+            }
+            .btn-text,.search-input{
+                display: block!important;
+            }
+            .search{
+                display: none!important;
+            }
+            .actions{
+                width: 100%;
+                height:100%;
+                display: flex;
+                justify-content: flex-end;;
+            }
+        }
+    }
     main {
         flex: 1;
         // overflow: hidden;

@@ -95,6 +95,7 @@
                     background-size: 100%;  
                     background-color: #e0e0e0;
                     position: relative;
+                    border-radius: .04rem;
                     .sound-num{
                         width:100% ;
                         height: .36rem;
@@ -102,6 +103,7 @@
                         position: absolute;
                         bottom: 0;
                         background: linear-gradient(180deg,transparent,rgba(0,0,0,.26));
+                        border-radius: 0 0 4px 4px;
                         span{
                             display: block;
                             position: absolute;

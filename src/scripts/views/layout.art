@@ -1,17 +1,36 @@
 
 <div class="index-container"> 
-    <header>
+    <header class="">
         <div class="content">
             <a href="/" >
                 <i class="logo"></i>
             </a>
             <div class="actions">
-                <a href="">
-                    <i class="search"></i>
+                <form class="search-input" action="">
+                    <span></span>
+                    <input type="search">
+                </form>
+                <span class="btn-text">取消</span>
+                <a href="/#search">
+                    <i class="search" data-to="search"></i>
                 </a>
                 <i class="menu"></i>
             </div>
         </div>
+        <div id="UserBar">
+            <a href="" class="row user">
+                <div class="avatar">
+                    <img src="https://static.missevan.com/assets/images/home/default-icon.jpg" alt="">
+                </div>
+                <div class="details">
+                    <span class="username">点击登陆</span>
+                </div>
+            </a>
+            <a href="" class="row icon home">M-主站</a>
+            <a href="" class="row icon audio">M-直播</a>
+            <a href="" class="row icon wallet">M-钱包</a>
+        </div>
+        
     </header>
     <main>
         <div class="list-container">

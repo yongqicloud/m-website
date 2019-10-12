@@ -6,24 +6,19 @@ const {
     parallel,
     watch
 } = require("gulp");
-const connect = require('gulp-connect');
 const sass = require('gulp-sass');
 const webpack = require("webpack-stream");
 const sourcemaps = require('gulp-sourcemaps');
-// const proxy = require('http-proxy-middleware');
 const cleanCSS = require('gulp-clean-css');
 const rev = require('gulp-rev');
 const revCollector = require('gulp-rev-collector');
 
-
 const buildPath = '../../build';
-
 
 function copyHtml() {
     return src([`${buildPath}/rev/**/*.json`,'../*.html'])
     .pipe(revCollector())
     .pipe(dest(buildPath))
-    .pipe(connect.reload())
 }
 function copylibs(){
     return src('../libs/**/*')
@@ -44,7 +39,6 @@ function packSass(){
     .pipe(dest(`${buildPath}/styles`))
     .pipe(rev.manifest())
     .pipe(dest(`${buildPath}/rev/styles`))
-    .pipe(connect.reload())
 }
 // js 模块化
 function packJs(){
@@ -71,8 +65,10 @@ function packJs(){
         }
     }))
     .pipe(sourcemaps.write('.'))
+    .pipe(rev())
     .pipe(dest(`${buildPath}/scripts`))
-    .pipe(connect.reload());
+    .pipe(rev.manifest())
+    .pipe(dest(`${buildPath}/rev/scripts`))
 }
 // watch
 

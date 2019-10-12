@@ -736,7 +736,8 @@ a {
   flex-direction: column; }
   .index-container header {
     height: .40rem;
-    background: #000; }
+    background: #000;
+    position: relative; }
     .index-container header .content {
       height: 100%;
       padding: 10px;
@@ -756,6 +757,43 @@ a {
       .index-container header .content .actions {
         width: .84rem;
         display: flex; }
+        .index-container header .content .actions .search-input {
+          display: none;
+          flex: 1 1 auto;
+          position: relative;
+          border-radius: .04rem;
+          border: none; }
+          .index-container header .content .actions .search-input > span {
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            width: 14px;
+            height: 14px;
+            background: #fff url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+            background-position: -247px -87px;
+            -webkit-background-size: 262px 234px;
+            -moz-background-size: 262px 234px;
+            background-size: 262px 234px;
+            z-index: 100; }
+          .index-container header .content .actions .search-input input {
+            position: absolute;
+            top: -.05rem;
+            height: .3rem;
+            width: 100%;
+            white-space: nowrap;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            border-radius: .04rem;
+            border: none;
+            padding: .06rem .1rem .06rem .3rem; }
+        .index-container header .content .actions .btn-text {
+          margin: 0 .10rem 0;
+          font-size: .12rem;
+          line-height: .2rem;
+          color: #fff;
+          display: none; }
         .index-container header .content .actions .search, .index-container header .content .actions .menu {
           width: .22rem;
           height: .20rem;
@@ -770,6 +808,134 @@ a {
         .index-container header .content .actions .menu {
           flex: 0 1 auto;
           background-position: -2.23rem 0; }
+    .index-container header #UserBar {
+      position: fixed;
+      width: 100%;
+      top: .4rem;
+      left: 100%;
+      height: calc(100vh - .4rem);
+      background: #000;
+      z-index: 100;
+      transition: left .5s ease-in-out; }
+      .index-container header #UserBar .row {
+        width: 100%;
+        color: #fff;
+        display: block;
+        position: relative;
+        background-color: #3d3d3d; }
+      .index-container header #UserBar .row::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: .08rem;
+        height: .14rem;
+        right: .1rem;
+        top: calc(50% - .07rem);
+        background: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+        background-position: -247px -202px;
+        -webkit-background-size: 262px 234px;
+        -moz-background-size: 262px 234px;
+        background-size: 262px 234px; }
+      .index-container header #UserBar .icon {
+        line-height: 38px;
+        font-size: 16px;
+        padding: 0 10px;
+        padding-left: 36px;
+        margin-bottom: .01rem; }
+      .index-container header #UserBar .icon::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 11px;
+        left: 10px;
+        height: 16px;
+        width: 16px;
+        background-repeat: no-repeat; }
+      .index-container header #UserBar .home::before {
+        background: url(https://static.missevan.com/assets/m/images/build/sprite-svg.b95276e7.svg) no-repeat -2px -43px/82px 61px; }
+      .index-container header #UserBar .audio::before {
+        background: url(https://static.missevan.com/assets/m/images/build/sprite-svg.b95276e7.svg) no-repeat -46px -2px/82px 61px; }
+      .index-container header #UserBar .wallet::before {
+        background: url(https://static.missevan.com/assets/m/images/build/sprite-svg.b95276e7.svg) no-repeat -22px -43px/82px 61px; }
+      .index-container header #UserBar .user {
+        display: flex;
+        height: 1.1rem;
+        padding: .2rem .3rem;
+        margin-bottom: .2rem;
+        justify-content: flex-start; }
+        .index-container header #UserBar .user .avatar {
+          width: .7rem;
+          height: .7rem;
+          border-radius: 50%; }
+          .index-container header #UserBar .user .avatar img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%; }
+        .index-container header #UserBar .user .details {
+          height: 100%;
+          width: calc(100% - 150px);
+          padding: .1rem .2rem;
+          line-height: .5rem;
+          font-size: .16rem; }
+    .index-container header .suggest-keyword {
+      position: absolute;
+      top: 40px;
+      width: 100%;
+      height: -webkit-calc(100vh - 40px);
+      height: -moz-calc(100vh - 40px);
+      height: calc(100vh - 40px);
+      padding-left: 10px;
+      background-color: #f5f5f5;
+      font-size: 14px;
+      z-index: 50; }
+      .index-container header .suggest-keyword .keyword-container {
+        position: relative;
+        height: 40px;
+        border-bottom: 1px solid #e0e0e0;
+        line-height: 40px; }
+        .index-container header .suggest-keyword .keyword-container .keywords {
+          color: #e63c3c; }
+      .index-container header .suggest-keyword .suggest-list {
+        position: relative; }
+        .index-container header .suggest-keyword .suggest-list .suggest-item {
+          display: block;
+          width: 100%;
+          height: .4rem;
+          line-height: .4rem; }
+          .index-container header .suggest-keyword .suggest-list .suggest-item .search-icon {
+            display: inline-block;
+            position: relative;
+            width: 13px;
+            height: 13px;
+            margin: 14px 10px 0 0;
+            background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png);
+            background-position: -247px -103px;
+            -webkit-background-size: 262px 234px;
+            -moz-background-size: 262px 234px;
+            background-size: 262px 234px;
+            vertical-align: top; }
+          .index-container header .suggest-keyword .suggest-list .suggest-item .item-content {
+            width: calc(100% - 30px);
+            white-space: nowrap;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            height: 40px;
+            color: #3d3d3d;
+            vertical-align: top; }
+  .index-container .Search .content .logo {
+    display: none; }
+  .index-container .Search .content .btn-text, .index-container .Search .content .search-input {
+    display: block !important; }
+  .index-container .Search .content .search {
+    display: none !important; }
+  .index-container .Search .content .actions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; }
   .index-container main {
     flex: 1;
     overflow-y: scroll; }
@@ -793,6 +959,15 @@ a {
       color: #000; }
     .list-container .tab-list .tab.active::after {
       border-color: #000; }
+    .list-container .tab-list .tab.set-bgcolor {
+      background: #fff;
+      animation: bgcolor 0.2s; }
+
+@keyframes bgcolor {
+  from {
+    background: lightblue; }
+  to {
+    background: #fff; } }
   .list-container .tab-list .tab::after {
     content: "";
     display: block;
@@ -1059,14 +1234,16 @@ a {
           background-position: 50%;
           background-size: 100%;
           background-color: #e0e0e0;
-          position: relative; }
+          position: relative;
+          border-radius: .04rem; }
           .sound-plate .sound-main .panel-body .thumbnail .cover .sound-num {
             width: 100%;
             height: .36rem;
             line-height: .24rem;
             position: absolute;
             bottom: 0;
-            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.26)); }
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.26));
+            border-radius: 0 0 4px 4px; }
             .sound-plate .sound-main .panel-body .thumbnail .cover .sound-num span {
               display: block;
               position: absolute;
@@ -1136,5 +1313,40 @@ a {
   mix-blend-mode: multiply;
   font-size: .12rem;
   color: #757575; }
+
+.search-page .search-header {
+  display: block;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: .40rem;
+  padding: .10rem;
+  font-size: .14rem;
+  color: #424242;
+  position: relative; }
+  .search-page .search-header::after {
+    content: "";
+    width: 96%;
+    height: 100%;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+    left: 2%; }
+
+.search-page .search-content {
+  padding: .1rem; }
+  .search-page .search-content .search-tag {
+    display: inline-block;
+    position: relative;
+    padding: 4px 10px;
+    margin: 5px 6px;
+    color: #9e9e9e;
+    border: 1px solid #9e9e9e;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    font-size: 12px; }
 
 /*# sourceMappingURL=app.css.map */

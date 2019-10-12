@@ -1,0 +1,15 @@
+<div class="suggest-keyword">
+    <div class="keyword-container">
+        搜索&nbsp;&nbsp;"
+        <span class="keywords">{{keywords}}</span>
+        "
+    </div>
+    <ul class="suggest-list">
+        {{each suggestWords}}
+        <a href="" class="suggest-item">
+            <i class="search-icon"></i>
+            <div class="item-content">{{$value}}</div>
+        </a>
+        {{/each}}
+    </ul>
+</div>
