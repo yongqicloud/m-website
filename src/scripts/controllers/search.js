@@ -44,8 +44,9 @@ class Search{
     }
     async searchInput(){
         let input_value = $('input').val();
-        // console.log(input_value);
+        console.log(input_value);
         if(input_value === ''){
+            console.log('移除成功');
             $('.suggest-keyword').remove();
         }else{
             let resultInputWords = await hotsearchModel.search(input_value);

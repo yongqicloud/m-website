@@ -13,7 +13,9 @@ class Index{
         location.hash = $(this).attr('data-to');
     }
     backHistory(){
-        window.history.go(-1)
+        $('.suggest-keyword').remove();
+        window.history.go(-1);
+
     }
     showMenu(){
         let left = parseInt($('#UserBar').css('left'));

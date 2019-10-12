@@ -37,7 +37,7 @@ class Router{
         
         defaultloadingController.render();
         let hash = location.hash.slice(1);
-        console.log(hash);
+        // console.log(hash);
         this.renderDOM(hash);
         this.setActiveClass(hash);
     }
