@@ -9,39 +9,58 @@ import positionControllor from '../controllers/position';
 import classificationControllor from '../controllers/classification';
 
 import searchControllor from '../controllers/search';
-import datailsControllor from '../controllers/details';
-// datailsControllor.render();
-
+//　详情页
+import detailsControllor from '../controllers/details';
+// detailsControllor.render();
 class Router{
     constructor(){
         this.render();
     }
     render(){
+        // console.log($('main .list-container .tab-content'));
         window.addEventListener('load',this.handlePageload.bind(this));
         window.addEventListener('hashchange',this.handleHashchange.bind(this));
     }
-    renderDOM(hash){
+    renderDOM(hash,page_id){
+        if(hash === 'details'){
+            $('main .list-container .tab-list').css({
+                display : 'none!important'
+            })
+        }else{
+            $('main .list-container .tab-list').css({
+                display : 'flex!important'
+            })
+
+        }
         let pageControllers = {
             soundListControllor,
             positionControllor,
             classificationControllor,
-            searchControllor
+            searchControllor,
+            detailsControllor
         }
-        pageControllers[hash+'Controllor'].render();
+        pageControllers[hash+'Controllor'].render(page_id);
     }
     handlePageload(){
         let hash = location.hash.slice(1) || 'position';
         location.hash = hash;
-        this.renderDOM(hash);
-        this.setActiveClass(hash);
+        let str = hash.split('/')
+        this.renderDOM(str[0],str[1]);
+        this.setActiveClass(str[0]);
     }
     handleHashchange(e){
         
-        defaultloadingController.render();
         let hash = location.hash.slice(1);
-        console.log(hash);
-        this.renderDOM(hash);
-        this.setActiveClass(hash);
+        // let reg = new RegExp('^(\\w+)','g');
+        let str = hash.split('/')
+        console.log(str);
+        // let path = reg.exec(hash);
+        
+        // console.log(path);
+        
+        defaultloadingController.render(str[0]);
+        this.renderDOM(str[0],str[1]);
+        this.setActiveClass(str[0],str[1]);
     }
     setActiveClass(hash){
         if(hash === 'search'){

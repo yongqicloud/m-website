@@ -12,7 +12,7 @@
         </div>
         <div class="panel-body">
             {{each albums}}
-            <a href="" class="thumbnail">
+            <a href="javascript:void(0)" class="Thumbnail thumbnail">
                 <div class="album-cover-bg"></div>
                 <div class="cover" style="background-image: url({{$value.front_cover}})">
                     <div class="sound-num">

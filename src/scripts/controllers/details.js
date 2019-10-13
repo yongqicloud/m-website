@@ -2,18 +2,22 @@ const detailsView = require('../views/details.art');
 const detailsModels = require('../models/detailsModes');
 
 class Details{
+    constructor(num_id){
+        console.log(num_id);
+        this.id = num_id;
+    }
 
-    async render(){
+    async render(page_id){
         // let num_id = '1374928';
-        let num_id = '1378249';
+        // let num_id = '1378249';
         // let num_id = '173143';
 
-        let result_details = await detailsModels.get(num_id);
+        let result_details = await detailsModels.get(page_id);
         result_details = result_details.info
         let html_str = result_details.sound.intro;
         console.log(html_str);
-        let result_dramaby  = await detailsModels.getDramaby(num_id);
-        let result_soundlike = await detailsModels.getSoundLike(num_id);
+        let result_dramaby  = await detailsModels.getDramaby(page_id);
+        let result_soundlike = await detailsModels.getSoundLike(page_id);
         result_soundlike = result_soundlike.info
         console.log(result_soundlike);
         result_dramaby = result_dramaby.info;
@@ -26,7 +30,7 @@ class Details{
             html : html_str,
             sound_like : result_soundlike
         });
-        $('main').html(detailsHTML);
+        $('main .list-container .tab-content').html(detailsHTML);
         $('.intro').children('div').html(html_str);
         // console.log(html_str.slice(1,html_str.length - 1));
         this.bindEvent();

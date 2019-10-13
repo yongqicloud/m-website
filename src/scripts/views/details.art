@@ -47,11 +47,11 @@
                     </div>
                 </div>
                 <div class="sound-drama">
-                    <a href="" class="drama-cover">
+                    <a href="javascript:void(0)" class="drama-cover">
                         <img src="{{dramaby.drama.cover}}" alt="">
 
                     </a>
-                    <a href="" class="drama-details">
+                    <a href="javascript:void(0)" class="drama-details">
                         <div class="drama-title">{{dramaby.drama.name}}</div>
                         <div class="drama-type">{{dramaby.drama.catalog_name}} 类型:{{dramaby.drama.type_name}}</div>
                         <div class="drama-latest-update">更新至 {{dramaby.drama.newest}}</div>
@@ -77,12 +77,12 @@
                 </div>
                 {{/if}}
                 <div class="sound-user">
-                    <a href="" class="avatar">
+                    <a href="javascript:void(0)" class="avatar">
                         <img src="{{details.user.icon}}" alt="">
 
                     </a>
                     <div class="user-sound-info">
-                        <a href="" class="username">{{dramaby.drama.username}}</a>
+                        <a href="javascript:void(0)" class="username">{{dramaby.drama.username}}</a>
                         <p class="publish-time">发布于:{{dramaby.drama.create_time}}</p>
                     </div>
                     <div class="btn-base btn-attention"></div>
@@ -93,7 +93,7 @@
                         <div class="section">剧集推荐</div>
                         <div class="sound-container">
                             {{each sound_like.dramas}}
-                            <a href="" class="re-drama">
+                            <a href="javascript:void(0)" class="re-drama">
                                 <div class="cover" style="background-image: url({{$value.front_cover}});"></div>
                                 <div class="title">{{$value.name}}</div>
                             </a>
@@ -107,7 +107,7 @@
                         <div class="section">包含该音频的频道</div>
                         <div class="sound-container">
                             {{each sound_like.channels}}
-                            <a href="" class="Thumbnail channel">
+                            <a href="javascript:void(0)" class="Thumbnail channel">
                                 <div class="cover" style="background-image: url({{$value.smallpic}});">
                                     <div class="follow">
                                         <span>{{$value.follow_num}}</span>
@@ -125,7 +125,7 @@
                         <div class="section">相似音频</div>
                         <div class="sound-container">
                             {{each sound_like.sounds}}
-                            <a href="" class="Thumbnail sound comic-box">
+                            <a href="javascript:void(0)" class="Thumbnail sound comic-box">
                                 <img src="{{$value.front_cover}}" alt="" class="cover">
                                 <div class="title">{{$value.soundstr}}</div>
                                 <div class="detail">

@@ -4,7 +4,7 @@
                 <div class="swiper-wrapper">
                     {{each banner}}
                     <div class="swiper-slide">
-                        <a href="" class="banner-link" style="background-image: url({{$value.pic}})">
+                        <a href="javascript:void(0)" class="banner-link" style="background-image: url({{$value.pic}})">
 
                         </a>
                     </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="panel-nav">
-                    <a href="">
+                    <a href="javascript:void(0)">
                         排行榜
                         <em></em>
                     </a>
@@ -33,7 +33,7 @@
             <div class="panel-body">
                 {{each sound}}
                 {{if $index <= 2}}
-                <a href="" class="comic-box">
+                <a href="javascript:void(0)" class="Thumbnail comic-box" data-to={{$value.id}}>
                     <img src="{{$value.front_cover}}" alt="" class="cover">
                     <div class="title">
                         {{$value.soundstr}}
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="panel-nav">
-                    <a href="" >
+                    <a href="javascript:void(0)" >
                         更多
                         <em></em>
                     </a>
@@ -64,7 +64,7 @@
             </div>
             <div class="panel-body">
                 {{each comic}}
-                <a href="" class="set-auto">
+                <a href="javascript:void(0)" class="Thumbnail set-auto" data-to={{$value.id}}>
                     <div class="img-box" style="background-image: url('{{$value.smallpic}}')">
                         <div class="follow">
                             <span>{{$value.follow_num}}</span>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="panel-nav">
-                    <a href="">
+                    <a href="javascript:void(0)">
                         更多
                         <em></em>
                     </a>
@@ -93,7 +93,7 @@
             </div>
             <div class="panel-body">
                 {{each $value.objects_point}}
-                <a href="" class="comic-box">
+                <a href="javascript:void(0)" class="Thumbnail comic-box" data-to={{$value.id}}>
                     <img src="https://static.missevan.com/coversmini/{{$value.cover_image}}" alt="" class="cover">
                     <div class="title">
                         {{$value.soundstr}}

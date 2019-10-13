@@ -434,6 +434,13 @@
                                     background-position: 50%;
                                     background-size: cover;
                                 }
+                                .title{
+                                    width: 100%;
+                                    margin-top: 2px;
+                                    color: #424242;
+                                    font-size: 13px;
+                                    @include ellipsis(null,1)
+                                }
                             }
                         }
                     }
@@ -491,7 +498,6 @@
 
                                             }
                                         }
-                                        
                                     }
                                 }
                                 .title{
