@@ -9,7 +9,7 @@ class Classification{
             list : result.info
         });
         console.log(result.info);
-        $('.tab-content').html(classificationHTML);
+        $('.list-container .tab-content').html(classificationHTML);
     }
 }
 export default new Classification();

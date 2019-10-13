@@ -9,6 +9,8 @@ import positionControllor from '../controllers/position';
 import classificationControllor from '../controllers/classification';
 
 import searchControllor from '../controllers/search';
+import datailsControllor from '../controllers/details';
+// datailsControllor.render();
 
 class Router{
     constructor(){

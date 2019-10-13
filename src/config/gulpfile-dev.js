@@ -25,6 +25,7 @@ function webServer(){
         name: 'Dist App',
         root: devPath,
         port: 8000,
+        // host: '10.9.49.38',
         livereload: true,
         middleware : () => {
             return [

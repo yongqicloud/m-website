@@ -18,7 +18,7 @@ class Sound{
         let soundHTML = soundListView({
             albums : albums,
         });
-        $('.tab-content').html(soundHTML)
+        $('.list-container .tab-content').html(soundHTML)
         // tab_content.innerHTML = html;
         // new BSscroll.default('main',{});
     }

@@ -29,7 +29,7 @@ class Position{
             banner : result_banner,
         })
         // console.log($('tab-content')[0]);
-        $('main .tab-content').html(positionLoopHtml);
+        $('.list-container .tab-content').html(positionLoopHtml);
         let view_num = document.querySelectorAll(".play-times");
         let comments_num = document.querySelectorAll(".comments");
         view_num.forEach((item)=>{

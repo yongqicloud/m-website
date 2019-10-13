@@ -662,12 +662,11 @@ textarea,
 button,
 select {
   color: inherit; }
-
-input:disabled,
-textarea:disabled,
-button:disabled,
-select:disabled {
-  opacity: 1; }
+  input:disabled,
+  textarea:disabled,
+  button:disabled,
+  select:disabled {
+    opacity: 1; }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -1348,5 +1347,474 @@ a {
     border-radius: 20px;
     background-color: #fff;
     font-size: 12px; }
+
+#SoundPage {
+  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll; }
+  #SoundPage #SoundPlayer {
+    position: relative;
+    height: 3.25rem;
+    background: lightblue; }
+  #SoundPage .sound-action-container {
+    display: flex;
+    padding: .14rem .12rem .10rem;
+    box-shadow: 0 0.01rem 0.1rem 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-around; }
+    #SoundPage .sound-action-container .sound-action {
+      flex: 1;
+      height: .54rem;
+      display: flex;
+      justify-content: space-around; }
+      #SoundPage .sound-action-container .sound-action li {
+        padding: 0 2px;
+        text-align: center;
+        cursor: pointer; }
+        #SoundPage .sound-action-container .sound-action li i {
+          display: block;
+          width: 35px;
+          height: 35px;
+          background: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+          background-size: 262px 234px; }
+      #SoundPage .sound-action-container .sound-action .share i {
+        background-position: 0 -146px; }
+      #SoundPage .sound-action-container .sound-action .like i {
+        background-position: -149px -74px; }
+      #SoundPage .sound-action-container .sound-action .download i {
+        background-position: -186px 0; }
+    #SoundPage .sound-action-container .btn-open-in-client {
+      width: 1.2rem;
+      height: .32rem;
+      margin-left: .08rem;
+      border-color: #ed7760;
+      background-color: #ed7760;
+      font-size: .12rem;
+      line-height: .22rem;
+      text-align: center;
+      vertical-align: bottom;
+      border-radius: .04rem; }
+    #SoundPage .sound-action-container .btn-larger {
+      padding: .06rem .18rem;
+      color: #fff; }
+  #SoundPage .Tabs {
+    min-height: calc(100% - 3.25rem - .68rem); }
+    #SoundPage .Tabs .tab-list {
+      height: .4rem;
+      line-height: .4rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: .12rem;
+      margin: .06rem 0;
+      overflow-x: scroll;
+      overflow-y: hidden; }
+      #SoundPage .Tabs .tab-list .tab {
+        position: relative;
+        text-align: center;
+        flex: 1 0 auto;
+        z-index: 0; }
+        #SoundPage .Tabs .tab-list .tab.active {
+          color: #c14a3f; }
+        #SoundPage .Tabs .tab-list .tab.active::after {
+          color: #c14a3f;
+          border-color: #c14a3f; }
+      #SoundPage .Tabs .tab-list .tab::after {
+        content: "";
+        width: .74rem;
+        height: 100%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        margin: 0 calc((100% - 74px) / 2);
+        border-bottom: 2px solid transparent;
+        z-index: 1; }
+    #SoundPage .Tabs .tab-content {
+      padding: .12rem 0;
+      min-height: calc(100vh - 1.60rem); }
+      #SoundPage .Tabs .tab-content #SoundIntro {
+        position: relative; }
+        #SoundPage .Tabs .tab-content #SoundIntro .sound-info {
+          padding: 0 .10rem;
+          padding-bottom: .18rem;
+          border-bottom: 1px solid #e0e0e0; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-info .title {
+            font-size: .14rem;
+            font-weight: 400;
+            min-height: .24rem;
+            line-height: .24rem; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-info .status {
+            height: .14rem;
+            line-height: .14rem;
+            font-size: .10rem;
+            color: #757575;
+            margin: .1rem 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-info .status .icon {
+              padding-left: .16rem;
+              margin-right: .2rem;
+              position: relative; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-info .status .icon-play-times::before, #SoundPage .Tabs .tab-content #SoundIntro .sound-info .status .icon-comments::before {
+              content: "";
+              position: absolute;
+              top: 2px;
+              left: 1px;
+              width: 12px;
+              height: 10px;
+              background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-thumbnails@2x.c71cb7b7.png);
+              background-repeat: no-repeat;
+              background-size: 56px 55px; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-info .status .icon-play-times::before {
+              background-position: -29px -44px; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-info .status .icon-comments::before {
+              background-position: -44px -27px; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-info .intro-container {
+            position: relative; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-info .intro-container .intro {
+              margin: .05rem 0;
+              font-size: 12px;
+              color: #9e9e9e;
+              width: 100%;
+              height: 40px;
+              word-break: break-all;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              display: -moz-box;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              box-orient: vertical;
+              line-clamp: 2;
+              line-height: 20px;
+              max-height: 40px;
+              height: auto;
+              transition: all 1s; }
+              #SoundPage .Tabs .tab-content #SoundIntro .sound-info .intro-container .intro p {
+                display: block; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-info .intro-container .btn-expand {
+              display: block;
+              width: .14rem;
+              height: .08rem;
+              margin-left: calc(100% - .16rem);
+              background: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+              background-size: 262px 234px;
+              background-position: -247px -218px;
+              transition: transform .3s; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-info .expand .intro {
+            max-height: inherit;
+            line-clamp: inherit;
+            -webkit-line-clamp: inherit; }
+        #SoundPage .Tabs .tab-content #SoundIntro .sound-drama {
+          position: relative;
+          height: 1.04rem;
+          margin: 0 .10rem;
+          padding: .18rem .02rem .18rem .72rem;
+          border-bottom: 1px solid #e0e0e0;
+          display: flex;
+          justify-content: space-between; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .drama-cover {
+            display: block;
+            position: absolute;
+            top: 18px;
+            left: 2px;
+            width: 60px;
+            height: 60px;
+            border-radius: 4px; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .drama-cover img {
+              width: 100%;
+              height: 100%; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .drama-details {
+            flex: 1; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .drama-details .drama-title {
+              color: #000;
+              font-size: 14px; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .drama-details .drama-type, #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .drama-details .drama-latest-update {
+              height: .2rem;
+              line-height: .2rem;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: #9e9e9e;
+              font-size: .12rem; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .btn-subscribe {
+            width: 65px;
+            height: 26px;
+            margin: 16px 0;
+            padding: 3px;
+            padding-left: 20px;
+            float: right;
+            border-color: #ed7760;
+            background-color: #ed7760;
+            color: #fff;
+            font-size: 12px;
+            line-height: 18px;
+            position: relative;
+            text-align: center; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .btn-subscribe::before {
+              content: "";
+              position: absolute;
+              display: block;
+              width: .13rem;
+              height: .12rem;
+              background: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.bfd3fcc1.png) no-repeat;
+              background-size: 2.62rem 2.34rem;
+              background-position: -2.47rem -1.46rem;
+              top: .06rem;
+              left: .12rem; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-drama .btn-subscribe::after {
+              content: "收藏";
+              font-size: .12rem; }
+        #SoundPage .Tabs .tab-content #SoundIntro .sound-cv {
+          position: relative;
+          padding: 16px 0;
+          border-bottom: 1px solid #e0e0e0; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .title {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            left: 0;
+            width: 100px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            font-size: 12px;
+            text-align: center; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container {
+            position: relative; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container .cvs-block {
+              max-height: 110px;
+              overflow: hidden;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: flex-start; }
+              #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container .cvs-block .Thumbnail.cv-in-sound {
+                width: calc(25% - .10rem);
+                height: 1.10rem;
+                margin: .05rem; }
+                #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container .cvs-block .Thumbnail.cv-in-sound .cover {
+                  display: block;
+                  width: .46rem;
+                  height: .46rem;
+                  border-radius: 50%;
+                  margin: 0 auto; }
+                #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container .cvs-block .Thumbnail.cv-in-sound .name {
+                  height: .18rem;
+                  line-height: .18rem;
+                  margin-top: .05rem;
+                  font-size: .12rem;
+                  text-align: center; }
+                #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container .cvs-block .Thumbnail.cv-in-sound .character {
+                  height: .16rem;
+                  line-height: .16rem;
+                  margin-top: .05rem;
+                  font-size: .10rem;
+                  text-align: center;
+                  color: #9e9e9e; }
+                #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .cvs-container .cvs-block .Thumbnail.cv-in-sound .group {
+                  height: .16rem;
+                  line-height: .16rem;
+                  color: #9e9e9e;
+                  font-size: .10rem;
+                  width: 100%;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap; }
+          #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .btn-expand {
+            display: block;
+            position: relative;
+            padding: 5px 0;
+            text-align: center; }
+            #SoundPage .Tabs .tab-content #SoundIntro .sound-cv .btn-expand::before {
+              content: "";
+              display: block;
+              width: 8px;
+              height: 8px;
+              margin: 0 auto;
+              transform: rotate(-135deg);
+              border-top: 2px solid #9e9e9e;
+              border-left: 2px solid #9e9e9e; }
+        #SoundPage .Tabs .tab-content #SoundIntro .expand .cvs-block, #SoundPage .Tabs .tab-content #SoundIntro .expand .intro {
+          max-height: inherit !important; }
+      #SoundPage .Tabs .tab-content .sound-user {
+        position: relative;
+        display: flex;
+        height: .78rem;
+        margin-bottom: .18rem;
+        padding: .18rem .12rem .18rem .62rem;
+        border-bottom: 1px solid #e0e0e0;
+        position: relative; }
+        #SoundPage .Tabs .tab-content .sound-user .avatar {
+          display: block;
+          width: .4rem;
+          height: .4rem;
+          position: absolute;
+          top: .18rem;
+          left: .12rem;
+          border-radius: 50%; }
+          #SoundPage .Tabs .tab-content .sound-user .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; }
+        #SoundPage .Tabs .tab-content .sound-user .user-sound-info {
+          flex: 1; }
+          #SoundPage .Tabs .tab-content .sound-user .user-sound-info .username {
+            display: block;
+            height: .2rem;
+            line-height: .2rem;
+            margin-bottom: .02rem;
+            font-size: .14rem;
+            color: #3d3d3d; }
+          #SoundPage .Tabs .tab-content .sound-user .user-sound-info .publish-time {
+            display: block;
+            height: .2rem;
+            line-height: .2rem;
+            font-size: .12rem;
+            color: #8c8c8c; }
+        #SoundPage .Tabs .tab-content .sound-user .btn-attention {
+          height: .26rem;
+          width: .65rem;
+          line-height: .18rem;
+          background: #ed7768;
+          border-color: #ed7768;
+          color: #fff;
+          font-size: .12rem;
+          margin: .06rem 0;
+          padding: .03rem;
+          text-align: center; }
+          #SoundPage .Tabs .tab-content .sound-user .btn-attention::after {
+            content: "\5173\6CE8"; }
+      #SoundPage .Tabs .tab-content .sound-related {
+        margin: .1rem 0; }
+        #SoundPage .Tabs .tab-content .sound-related .sound-block {
+          margin: .2rem .08rem; }
+          #SoundPage .Tabs .tab-content .sound-related .sound-block .section {
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #979797; }
+          #SoundPage .Tabs .tab-content .sound-related .sound-block .sound-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-block .sound-container .re-drama {
+              width: calc((100vw - 60px) / 3); }
+              #SoundPage .Tabs .tab-content .sound-related .sound-block .sound-container .re-drama .cover {
+                width: 100%;
+                height: calc((100vw - .60rem) / 3 * 1.3);
+                border-radius: 4px;
+                background: url(https://static.missevan.com/dramacoversmini/201712/30/1f11e42886e4c7e17cdf312d013107da122551.);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: cover; }
+        #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start; }
+          #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container .channel {
+            display: block;
+            width: calc(50vw - .28rem);
+            margin: .03rem; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container .channel .cover {
+              width: 100%;
+              height: calc((50vw -.28rem) / 1.5);
+              position: relative;
+              overflow: hidden;
+              background-repeat: no-repeat;
+              background-image: url(https://static.missevan.com/mtags/201512/01/02b03508085127e1d3ed56561c632fa2100757.jpg);
+              border-radius: .04rem;
+              background-size: 100%;
+              background-position: 50%; }
+              #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container .channel .cover .follow {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: .80rem;
+                height: .20rem;
+                padding: 0 .05rem;
+                background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2));
+                display: flex;
+                justify-content: flex-end;
+                text-align: right; }
+                #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container .channel .cover .follow span {
+                  position: relative;
+                  height: .20rem;
+                  line-height: .20rem;
+                  padding-left: .18rem;
+                  color: #fff;
+                  font-size: .12rem;
+                  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); }
+                  #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container .channel .cover .follow span::before {
+                    content: "";
+                    position: absolute;
+                    top: .04rem;
+                    left: 0;
+                    width: .15rem;
+                    height: .13rem;
+                    background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-thumbnails@2x.c71cb7b7.png);
+                    background-position: -18px -26px;
+                    background-size: 56px 55px; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-channels .sound-container .channel .title {
+              margin-top: .03rem;
+              height: .4rem;
+              width: 100%;
+              color: #616161;
+              font-size: .13rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box !important;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -webkit-flex-direction: column;
+              flex-direction: column;
+              word-wrap: break-word;
+              word-break: break-all; }
+        #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound {
+          width: 1.06rem;
+          height: 1.63rem;
+          margin: .05rem; }
+          #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .cover {
+            display: block;
+            width: 1.06rem;
+            height: 1.06rem; }
+          #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .title {
+            color: #616161;
+            font-size: .12rem;
+            width: 100%;
+            margin: .04rem 0;
+            line-height: .18rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            word-wrap: break-word;
+            word-break: break-all; }
+          #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .detail {
+            display: flex;
+            justify-content: space-between; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .detail .item {
+              position: relative;
+              padding-left: 14px;
+              font-size: 11px;
+              line-height: 11px;
+              color: #bdbdbd; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .detail .item::before {
+              content: "";
+              display: block;
+              position: absolute;
+              left: 0;
+              height: 10px;
+              width: 12px;
+              background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-thumbnails@2x.c71cb7b7.png);
+              background-size: 56px 55px; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .detail .play-times::before {
+              background-position: -29px -44px; }
+            #SoundPage .Tabs .tab-content .sound-related .sound-sounds .sound-container .sound .detail .comments::before {
+              background-position: -44px -27px; }
 
 /*# sourceMappingURL=app.css.map */
