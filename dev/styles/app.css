@@ -1354,8 +1354,191 @@ a {
   overflow-y: scroll; }
   #SoundPage #SoundPlayer {
     position: relative;
-    height: 3.25rem;
-    background: lightblue; }
+    height: 3.25rem; }
+    #SoundPage #SoundPlayer .video {
+      position: absolute;
+      width: 100%;
+      height: 3.25rem;
+      top: 0; }
+      #SoundPage #SoundPlayer .video .cover {
+        position: absolute;
+        width: 100%;
+        height: 3.25rem;
+        top: 0;
+        overflow: hidden;
+        background-size: cover;
+        background-position: 50%;
+        z-index: 0; }
+        #SoundPage #SoundPlayer .video .cover .record-disk {
+          width: 100%;
+          height: 2.20rem;
+          position: absolute;
+          top: .3rem;
+          left: 0;
+          right: 0;
+          text-align: center;
+          overflow: hidden; }
+          #SoundPage #SoundPlayer .video .cover .record-disk .disk-cover {
+            width: 2.2rem;
+            height: 2.2rem;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat; }
+      #SoundPage #SoundPlayer .video video {
+        width: 100%;
+        height: 100%; }
+    #SoundPage #SoundPlayer .controller {
+      position: absolute;
+      width: .48rem;
+      height: .3rem;
+      right: .1rem;
+      bottom: .2rem;
+      z-index: 5;
+      border-radius: .08rem;
+      text-align: center;
+      background-color: rgba(214, 214, 214, 0.4);
+      transition: bottom .5s ease;
+      display: flex;
+      justify-content: center; }
+      #SoundPage #SoundPlayer .controller .btn-icon.btn-play, #SoundPage #SoundPlayer .controller .btn-icon.btn-pause {
+        width: .28rem;
+        height: .28rem;
+        margin-top: .01rem;
+        background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-sound@2x.0f86e6b7.png);
+        background-repeat: no-repeat;
+        background-size: 1.20rem 1.02rem; }
+      #SoundPage #SoundPlayer .controller .btn-icon.btn-play {
+        background-position: -.75rem 0; }
+      #SoundPage #SoundPlayer .controller .btn-icon.btn-pause {
+        background-position: -75px -30px; }
+    #SoundPage #SoundPlayer .controller.up {
+      bottom: .6rem; }
+    #SoundPage #SoundPlayer .danmaku-send-wrap {
+      overflow: hidden;
+      width: 100%;
+      height: 56px;
+      position: absolute;
+      z-index: 4;
+      bottom: 0;
+      right: 0; }
+      #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: .12rem .1rem;
+        left: 0;
+        bottom: -.56rem;
+        background: #3d3d3d;
+        transition: bottom .5s ease; }
+        #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .danmaku-input {
+          width: calc(100% - .70rem);
+          position: relative;
+          background: #bdbdbd;
+          display: flex;
+          outline: none;
+          border: none;
+          border-radius: .04rem; }
+          #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .danmaku-input input::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #bdbdbd; }
+          #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .danmaku-input .text-area {
+            flex: 1;
+            border: none;
+            outline: none;
+            height: .28rem;
+            color: #bdbdbd;
+            background: #757575;
+            padding-left: .08rem;
+            border-radius: .04rem 0 0 .04rem; }
+          #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .danmaku-input .btn-send {
+            height: .28rem;
+            width: .45rem;
+            padding: .06rem .11rem;
+            background: #757575;
+            border: none;
+            border-radius: 0 .04rem .04rem 0;
+            font-size: .12rem;
+            color: #bdbdbd; }
+        #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .btn-toggle {
+          height: .28rem;
+          width: .28rem;
+          border: none;
+          border-radius: 4px;
+          background: #5d5d5d;
+          color: #bdbdbd;
+          font-size: 12px;
+          position: relative; }
+        #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .btn-toggle::before {
+          content: "";
+          width: .24rem;
+          height: .24rem;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-sound@2x.0f86e6b7.png);
+          background-size: 1.2rem 1.02rem; }
+        #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .btn-toggle.dm::before {
+          background-position: -30px -44px; }
+        #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send .btn-toggle.full::before {
+          background-position: -30px -74px; }
+      #SoundPage #SoundPlayer .danmaku-send-wrap .danmaku-send.show {
+        bottom: 0; }
+    #SoundPage #SoundPlayer .progress-bar {
+      height: .04rem;
+      width: 100%;
+      padding: .01rem 0;
+      position: absolute;
+      bottom: -.01rem;
+      z-index: 4; }
+      #SoundPage #SoundPlayer .progress-bar .loaded, #SoundPage #SoundPlayer .progress-bar .played {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: width .2s ease; }
+      #SoundPage #SoundPlayer .progress-bar .loaded {
+        width: 50%;
+        background-color: #b2b2b2; }
+      #SoundPage #SoundPlayer .progress-bar .played {
+        background-color: #e63c3c; }
+        #SoundPage #SoundPlayer .progress-bar .played .thumb {
+          position: absolute;
+          width: .16rem;
+          height: .16rem;
+          top: -.07rem;
+          right: -.07rem;
+          border-radius: 50%;
+          border: 0.04rem solid rgba(0, 0, 0, 0.3);
+          z-index: 999; }
+          #SoundPage #SoundPlayer .progress-bar .played .thumb::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: .08rem;
+            height: .08rem;
+            background-color: #fff;
+            border-radius: 50%; }
+    #SoundPage #SoundPlayer .sound-time {
+      position: absolute;
+      bottom: -.14rem;
+      left: 0;
+      width: 100%;
+      font-size: .09rem;
+      color: #a6a6a6;
+      height: .14rem;
+      line-height: .12rem;
+      padding: .01rem .05rem;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none; }
   #SoundPage .sound-action-container {
     display: flex;
     padding: .14rem .12rem .10rem;

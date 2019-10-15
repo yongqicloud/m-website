@@ -1,6 +1,40 @@
 <div id="SoundPage">
     <div id="SoundPlayer">
-        
+        <div class="video">
+            <div class="cover" style="background-image: url(https://static.missevan.com/mosaic/{{details.sound.cover_image}});">
+                <div class="record-disk" >
+                    <div class="disk-cover" style="background-image: url({{details.sound.front_cover}});"></div>
+                </div>
+            </div>
+            <video src="{{details.sound.videourl}}" preload="auto" >
+                <source src="{{details.sound.videourl}}">
+                暫不支持該格式!
+            </video>
+            
+        </div>
+        <div class="controller">
+            <div class="btn-icon btn-play"></div>
+        </div>
+        <div class="danmaku-send-wrap">
+            <div class="danmaku-send">
+                <form class="danmaku-input">
+                    <input type="text" class="text-area" placeholder="来点弹幕啊~">
+                    <input type="submit" class="btn-send" value="发送">
+                </form>
+                <button class="btn-toggle dm on"></button>
+                <button class="btn-toggle full"></button>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="loaded"></div>
+            <div class="played">
+                <div class="thumb draggable"></div>
+            </div>
+        </div>
+        <div class="sound-time">
+                <span class="played-time">0:00</span>
+                <span class="duration">31:55</span>
+        </div>
     </div>
     <div class="sound-action-container">
         <ul class="sound-action">
@@ -32,7 +66,7 @@
                 <div class="sound-info">
                     <h3 class="title">{{details.sound.soundstr}}</h3>
                     <ul class="status">
-                        <li class="icon icon-play-times">{{details.sound.view_count}}</li>
+                        <li class="icon icon-play-times">{{details.sound.view_count_formatted}}</li>
                         <li class="icon icon-comments">{{details.sound.all_comments}}</li>
                         <li class="">音频ID:{{details.sound.id}}</li>
                     </ul>

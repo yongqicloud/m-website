@@ -27,6 +27,7 @@
     "art-template": "^4.13.2",
     "art-template-loader": "^1.4.3",
     "better-scroll": "^1.15.2",
+    "moment": "^2.24.0",
     "string-loader": "0.0.1"
   }
 }

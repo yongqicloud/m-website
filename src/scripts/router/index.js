@@ -22,16 +22,16 @@ class Router{
         window.addEventListener('hashchange',this.handleHashchange.bind(this));
     }
     renderDOM(hash,page_id){
-        if(hash === 'details'){
-            $('main .list-container .tab-list').css({
-                display : 'none!important'
-            })
-        }else{
-            $('main .list-container .tab-list').css({
-                display : 'flex!important'
-            })
-
-        }
+        // if(hash === 'details'){
+        //     $('main .list-container .tab-list').css({
+        //         display : 'none!important'
+        //     })
+        // }else{
+        //     $('main .list-container .tab-list').css({
+        //         display : 'flex!important'
+        //     })
+        // }
+        // defaultloadingController.render(hash);
         let pageControllers = {
             soundListControllor,
             positionControllor,
@@ -45,6 +45,7 @@ class Router{
         let hash = location.hash.slice(1) || 'position';
         location.hash = hash;
         let str = hash.split('/')
+        defaultloadingController.render(str[0]);
         this.renderDOM(str[0],str[1]);
         this.setActiveClass(str[0]);
     }
