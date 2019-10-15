@@ -11,6 +11,9 @@ import classificationControllor from '../controllers/classification';
 import searchControllor from '../controllers/search';
 //　详情页
 import detailsControllor from '../controllers/details';
+// 戏剧列表
+import albumControllor from '../controllers/album';
+// albumComtrollor.render();
 // detailsControllor.render();
 class Router{
     constructor(){
@@ -37,7 +40,8 @@ class Router{
             positionControllor,
             classificationControllor,
             searchControllor,
-            detailsControllor
+            detailsControllor,
+            albumControllor
         }
         pageControllers[hash+'Controllor'].render(page_id);
     }

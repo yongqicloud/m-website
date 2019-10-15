@@ -4,6 +4,7 @@ export class RunSwiper{
     }
     render(){
         let mySwiper = new Swiper('.swiper-container',{
+            loop : true,
             autoplay : {
                 stopOnlastslide : true
             },
@@ -12,7 +13,6 @@ export class RunSwiper{
                 clickable:true
             }
         })
-        console.log('swiper加载成功');
     }
 };
 export default RunSwiper;

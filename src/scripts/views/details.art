@@ -33,7 +33,7 @@
         </div>
         <div class="sound-time">
                 <span class="played-time">0:00</span>
-                <span class="duration">31:55</span>
+                <span class="duration"></span>
         </div>
     </div>
     <div class="sound-action-container">
@@ -80,35 +80,36 @@
                         <span class="btn-text btn-expand"></span>
                     </div>
                 </div>
-                <div class="sound-drama">
-                    <a href="javascript:void(0)" class="drama-cover">
-                        <img src="{{dramaby.drama.cover}}" alt="">
-
-                    </a>
-                    <a href="javascript:void(0)" class="drama-details">
-                        <div class="drama-title">{{dramaby.drama.name}}</div>
-                        <div class="drama-type">{{dramaby.drama.catalog_name}} 类型:{{dramaby.drama.type_name}}</div>
-                        <div class="drama-latest-update">更新至 {{dramaby.drama.newest}}</div>
-                    </a>
-                    <div class="btn-base btn-attention btn-subscribe"></div>
-                </div>
-                {{if dramaby.cvs.length >= 1}}
-                <div class="sound-cv">
-                    <div class="title">参演 CV ({{dramaby.cvs.length}})</div>
-                    <div class="cvs-container">
-                        <div class="cvs-block">
-                            {{each dramaby.cvs}}
-                            <div class="Thumbnail cv-in-sound">
-                                <img src="{{$value.cvinfo.icon}}" class="cover" alt="">
-                                <div class="name">{{$value.cvinfo.name}}</div>
-                                <div class="character">饰：{{$value.character}}</div>
-                                <div class="group">{{$value.cvinfo.group}}</div>
-                            </div>
-                            {{/each}}
-                        </div>
-                        <span class="btn-text btn-expand"></span>
+                {{if dramaby === '单集不存在'}}
+                    <div class="sound-drama">
+                        <a href="javascript:void(0)" class="drama-cover">
+                            <img src="{{dramaby.drama.cover}}" alt="">
+                        </a>
+                        <a href="javascript:void(0)" class="drama-details">
+                            <div class="drama-title">{{dramaby.drama.name}}</div>
+                            <div class="drama-type">{{dramaby.drama.catalog_name}} 类型:{{dramaby.drama.type_name}}</div>
+                            <div class="drama-latest-update">更新至 {{dramaby.drama.newest}}</div>
+                        </a>
+                        <div class="btn-base btn-attention btn-subscribe"></div>
                     </div>
-                </div>
+                    {{if dramaby.cvs.length >= 1}}
+                    <div class="sound-cv">
+                        <div class="title">参演 CV ({{dramaby.cvs.length}})</div>
+                        <div class="cvs-container">
+                            <div class="cvs-block">
+                                {{each dramaby.cvs}}
+                                <div class="Thumbnail cv-in-sound">
+                                    <img src="{{$value.cvinfo.icon}}" class="cover" alt="">
+                                    <div class="name">{{$value.cvinfo.name}}</div>
+                                    <div class="character">饰：{{$value.character}}</div>
+                                    <div class="group">{{$value.cvinfo.group}}</div>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <span class="btn-text btn-expand"></span>
+                        </div>
+                    </div>
+                    {{/if}}
                 {{/if}}
                 <div class="sound-user">
                     <a href="javascript:void(0)" class="avatar">
@@ -116,8 +117,9 @@
 
                     </a>
                     <div class="user-sound-info">
-                        <a href="javascript:void(0)" class="username">{{dramaby.drama.username}}</a>
-                        <p class="publish-time">发布于:{{dramaby.drama.create_time}}</p>
+                        <a href="javascript:void(0)" class="username">{{details.sound.username}}</a>
+                        <p class="publish-time">发布于:{{details.sound.create_time}}</p>
+                        
                     </div>
                     <div class="btn-base btn-attention"></div>
                 </div>

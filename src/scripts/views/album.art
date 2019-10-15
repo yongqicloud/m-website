@@ -1,0 +1,34 @@
+<div id="AlbumPage">
+    <div class="Wall album-wall">
+        <div class="wall-body">
+            <img class="album-avatar" src="https://static.missevan.com/coversmini/{{list.album.cover_image}}" alt="">
+            <div class="album-detail">
+                <span class="album-title">{{list.album.title}}</span>
+                <a href="javascript:void(0)" class="Thumbnail simple-user album-user">
+                    <img class="avatar" src="https://static.missevan.com/web_app/lazy_load.png" alt="">
+                    <div class="name">{{list.album.username}}</div>
+                </a>
+            </div>
+            
+        </div>
+        <div class="wall-warp blur" style="background-image: url(https://static.missevan.com/coversmini/{{list.album.cover_image}});"></div>
+    </div>
+    <div class="SoundList">
+        {{if list.sounds !== null}}
+            {{each list.sounds}}
+                <div class="Thumbnail list-sound">
+                    <div class="cover">
+                        <img src="{{$value.front_cover}}" alt="">
+                    </div>
+                    <a href="javascript:void(0)" class="detail" data-to="{{$value.id}}">
+                        <div class="title">{{$value.soundstr}}</div>
+                        <div class="statistics">
+                            <span class="item play-times">{{$value.view_count_formatted}}</span>
+                            <span class="item duration">{{$value.duration}}</span>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        {{/if}}
+    </div>
+</div>
