@@ -1,0 +1,38 @@
+<div id="ChannelPage">
+    <div class="Wall channel-wall"">
+        <div class="wall-body">
+            <div class="channel-title">如果条漫会说话</div>
+
+            <div class="channel-detail">
+                <span class="channel-intro">配合声音，食用更佳。</span>
+                <button class="channel-btn"></button>
+            </div>
+        </div>
+        <div class="wall-warp"></div>
+    </div>
+    <div class="Tabs">
+        <ul class="tab-list divider">
+            <li class="tab active">
+                动态
+            </li>
+            <li class="tab">评论</li>
+            <li class="tab">成员</li>
+        </ul>
+        <div class="SoundList">
+            {{each list.Datas}}
+                <div class="Thumbnail list-sound">
+                    <div class="cover">
+                        <img src="{{$value.front_cover}}" alt="">
+                    </div>
+                    <a href="javascript:void(0)" class="detail" data-to="{{$value.id}}">
+                        <div class="title">{{$value.soundstr}}</div>
+                        <div class="statistics">
+                            <span class="item play-times">{{$value.view_count}}</span>
+                            <span class="item duration">{{$value.duration}}</span>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

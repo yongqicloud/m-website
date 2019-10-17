@@ -6,12 +6,26 @@ class Loading{
         console.log(str);
         // console.log($('main .list-container .tab-content'));
         let loadingHTML = defaultloadingView({});
-        if(str === 'details' || str === 'album'){
+        if(str === 'details' || str === 'album' || str === 'search' || str === 'channel' ){
             $('main .list-container .tab-list').css({
                 display : 'none!important'
             })
-        }else{
+            $('footer').css({
+                display : 'flex!important'
+            })
+        }else if( str === 'catalogs'){
             $('main .list-container .tab-list').css({
+                display : 'none!important'
+            })
+            $('footer').css({
+                display : 'none!important'
+            })
+        }
+        else{
+            $('main .list-container .tab-list').css({
+                display : 'flex!important'
+            })
+            $('footer').css({
                 display : 'flex!important'
             })
         };

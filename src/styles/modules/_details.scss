@@ -176,6 +176,7 @@
             bottom: -.01rem;
             z-index: 4;
             .loaded,.played{
+                width: 0;
                 position: absolute;
                 top: 1px;
                 left: 0;
@@ -184,11 +185,11 @@
                 transition: width .2s ease;
             }
             .loaded{
-                width: 50%;
                 background-color: #b2b2b2;
             }
             .played{
                 background-color: #e63c3c;
+                transition: width .15s ease;
                 .thumb{
                     position: absolute;
                     width: .16rem;
@@ -318,7 +319,7 @@
                 display: block;
                 position: absolute;
                 bottom: 0;
-                margin: 0 calc((100% - 74px) / 2);
+                left: calc((100% - 74px) / 2);
                 border-bottom: 2px solid transparent;
                 z-index: 1;
             }
@@ -750,6 +751,7 @@
                                     font-size: .12rem;
                                     width: 100%;
                                     margin: .04rem 0;
+                                    height: .36rem;
                                     line-height: .18rem;
                                     @include ellipsis(null,2);
                                 }

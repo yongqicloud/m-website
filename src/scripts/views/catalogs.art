@@ -1,0 +1,86 @@
+<div id="SoundCatalog">
+    <div class="sub-header">{{info.catalog_name}}</div>
+    <ul class="sub-catalogs">
+        <li class="active" data-to="">
+            <a href="javascripts:void(0)">全区动态</a>
+        </li>
+        {{each info.son}}
+            <li data-to="{{$value.id}}">
+                <a href="javascripts:void(0)">{{$value.catalog_name}}</a>
+            </li>
+        {{/each}}
+    </ul>
+    <div class="set-overflow">
+    <div class="Panel trans">
+        <div class="panel-head">
+            <div class="panel-title">
+                <div class="callout">全区动态</div>
+            </div>
+            <div class="panel-nav"></div>
+        </div>
+        <div class="panel-body">
+            <div class="SoundList">
+                {{each allDynamic}}
+                {{if $index <=3}}
+                <div class="Thumbnail list-sound ">
+                    <div class="cover">
+                        <img src="{{$value.front_cover}}" alt="">
+                    </div>
+                    <a href="javascript:void(0)" class="detail" data-to="{{$value.id}}">
+                        <div class="title">{{$value.soundstr}}</div>
+                        <div class="username">UP主：{{$value.username}}</div>
+                        <div class="statistics">
+                            <span class="item play-times">{{$value.view_count}}</span>
+                            <span class="item duration">{{$value.duration}}</span>
+                        </div>
+                    </a>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{each info.son}}
+    <div class="Panel trans">
+            <div class="panel-head">
+                <div class="panel-title">
+                    <div class="callout">{{$value.catalog_name}}</div>
+                </div>
+                <div class="panel-nav">
+                    <div class="sound-panel-nav">更多</div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="SoundList">
+                    {{each infoList[$index].info.Datas}}
+                    {{if $index <=3}}
+                    <div class="Thumbnail list-sound ">
+                        <div class="cover">
+                            <img src="{{$value.front_cover}}" alt="">
+                        </div>
+                        <a href="javascript:void(0)" class="detail" data-to="{{$value.id}}">
+                            <div class="title">{{$value.soundstr}}</div>
+                            <div class="username">UP主：{{$value.username}}</div>
+                            <div class="statistics">
+                                <span class="item play-times">{{$value.view_count}}</span>
+                                <span class="item duration">{{$value.duration}}</span>
+                            </div>
+                        </a>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+    </div>
+    {{/each}}
+    <div class="foot">
+        <div class="content">
+            <button>客户端</button>
+            <i class="logo-cat"></i>
+            <button>返回顶部</button>
+        </div>
+        <div class="bottom">MissEvan弹幕音频网 京ICP备:14055174号-1</div>
+    </div>
+    </div>
+    
+</div>

@@ -6,11 +6,17 @@
                     <div class="disk-cover" style="background-image: url({{details.sound.front_cover}});"></div>
                 </div>
             </div>
-            <video src="{{details.sound.videourl}}" preload="auto" >
-                <source src="{{details.sound.videourl}}">
-                暫不支持該格式!
-            </video>
-            
+            {{if details.sound.videourl}}
+                <video preload src="{{details.sound.videourl}}" preload="auto" >
+                    <source src="{{details.sound.videourl}}">
+                    暫不支持該格式!
+                </video>
+            {{else}}
+                <audio preload="auto" src="http://sc1.111ttt.cn/2018/1/03/13/396131232171.mp3" >
+                    <source src="http://sc1.111ttt.cn/2018/1/03/13/396131232171.mp3">
+                    暂不支持此格式
+                </audio>
+            {{/if}}
         </div>
         <div class="controller">
             <div class="btn-icon btn-play"></div>
@@ -32,8 +38,8 @@
             </div>
         </div>
         <div class="sound-time">
-                <span class="played-time">0:00</span>
-                <span class="duration"></span>
+                <span class="played-time">00:00</span>
+                <span class="duration">{{details.sound.duration}}</span>
         </div>
     </div>
     <div class="sound-action-container">
@@ -80,7 +86,7 @@
                         <span class="btn-text btn-expand"></span>
                     </div>
                 </div>
-                {{if dramaby === '单集不存在'}}
+                {{if dramaby !== null}}
                     <div class="sound-drama">
                         <a href="javascript:void(0)" class="drama-cover">
                             <img src="{{dramaby.drama.cover}}" alt="">
@@ -114,12 +120,10 @@
                 <div class="sound-user">
                     <a href="javascript:void(0)" class="avatar">
                         <img src="{{details.user.icon}}" alt="">
-
                     </a>
                     <div class="user-sound-info">
                         <a href="javascript:void(0)" class="username">{{details.sound.username}}</a>
-                        <p class="publish-time">发布于:{{details.sound.create_time}}</p>
-                        
+                        <p class="publish-time">发布于:{{details.sound.create_time}}</p>                        
                     </div>
                     <div class="btn-base btn-attention"></div>
                 </div>

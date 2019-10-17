@@ -18,9 +18,7 @@ class Album{
     }
     handleHash(e){
         e.preventDefault();
-        console.log('监听事件');
-        let data_id = $(this).attr('data-to')
-        console.log(data_id);
+        let data_id = $(this).attr('data-to');
         location.hash = 'details/' + data_id;
     }
 }

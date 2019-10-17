@@ -1,20 +1,15 @@
-// 加载layout
-import indexController from '../controllers';
-// 默认加载loading页面
-import defaultloadingController from '../controllers/dafaultloading'
-// console.log(defaultloadingController);
+import indexController from '../controllers';   //加载layout
+import defaultloadingController from '../controllers/dafaultloading'    //默认加载loading页面
 // 加载router页面
 import soundListControllor from '../controllers/soundlist';
-import positionControllor from '../controllers/position';
+import positionControllor from '../controllers/position';  //主页
 import classificationControllor from '../controllers/classification';
+import searchControllor from '../controllers/search'; //搜索
+import detailsControllor from '../controllers/details'; //详情页
+import albumControllor from '../controllers/album';  //戏剧列表
+import channelControllor from '../controllers/channel'; //广播
+import catalogsControllor from '../controllers/catalogs' // 展示更多
 
-import searchControllor from '../controllers/search';
-//　详情页
-import detailsControllor from '../controllers/details';
-// 戏剧列表
-import albumControllor from '../controllers/album';
-// albumComtrollor.render();
-// detailsControllor.render();
 class Router{
     constructor(){
         this.render();
@@ -41,7 +36,9 @@ class Router{
             classificationControllor,
             searchControllor,
             detailsControllor,
-            albumControllor
+            albumControllor,
+            channelControllor,
+            catalogsControllor
         }
         pageControllers[hash+'Controllor'].render(page_id);
     }

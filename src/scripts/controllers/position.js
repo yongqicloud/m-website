@@ -57,13 +57,25 @@ class Position{
         // new BScroll.default('main',{});
     }
     bindEvent(){
-        $('.Thumbnail').on('tap',this.handleHash)
+        $('.Thumbnail.comic-box').on('tap',this.handleHash);
+        $('.Thumbnail.set-auto').on('tap',this.handlChanneleHash)
+        $('.list-link').on('tap',this.handleListHash);
+        $('.channel-link').on('tap',this.handleListHash);
     }
     handleHash(e){
         e.preventDefault();
         let data_id = $(this).attr('data-to')
         location.hash = 'details/' + data_id;
     }
-    
+    handlChanneleHash(e){
+        e.preventDefault();
+        let data_id = $(this).attr('data-to')
+        location.hash = 'channel/' + data_id;
+    }
+    handleListHash(e){
+        e.preventDefault();
+        let data_id = $(this).attr('data-to');
+        location.hash = 'catalogs/' + data_id;
+    }
 }
 export default new Position()

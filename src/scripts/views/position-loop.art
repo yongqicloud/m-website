@@ -4,7 +4,7 @@
                 <div class="swiper-wrapper">
                     {{each banner}}
                     <div class="swiper-slide">
-                        <a href="javascript:void(0)" class="banner-link" style="background-image: url({{$value.pic}})">
+                        <a href="{{$value.url}}" data-to="{{$value.url}}" class="banner-link" style="background-image: url({{$value.pic}})">
 
                         </a>
                     </div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="panel-nav">
-                    <a href="javascript:void(0)" >
+                    <a href="javascript:void(0)" class="channel-link" data-to="5">
                         更多
                         <em></em>
                     </a>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="panel-nav">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" class="list-link" data-to="{{$value.id}}">
                         更多
                         <em></em>
                     </a>

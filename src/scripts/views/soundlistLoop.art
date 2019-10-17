@@ -1,0 +1,12 @@
+{{each albums}}
+    <a href="javascript:void(0)" class="Thumbnail thumbnail" data-to={{$value.id}}>
+        <div class="album-cover-bg"></div>
+        <div class="cover" style="background-image: url({{$value.front_cover}})">
+            <div class="sound-num">
+                <span>{{$value.music_count}}</span>
+            </div>
+        </div>
+        <div class="title">{{$value.title}}</div>
+    </a>
+{{/each}}
+<button class="btn-text open-app">更多</button>
