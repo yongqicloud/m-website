@@ -20,6 +20,7 @@ class Position{
 
         let result_comic = result_info.info.channel;
         let result_sound = result_info.info.sound;
+        console.log(result_sound);
         let result_banner = result_info.info.banner;
         // console.log(result_list,result_comic,result_sound,result_banner);
         let positionLoopHtml = positionLoopView({
@@ -29,7 +30,7 @@ class Position{
             banner : result_banner,
         })
         // console.log($('tab-content')[0]);
-        $('main .tab-content').html(positionLoopHtml);
+        $('.list-container .tab-content').html(positionLoopHtml);
         let view_num = document.querySelectorAll(".play-times");
         let comments_num = document.querySelectorAll(".comments");
         view_num.forEach((item)=>{
@@ -44,6 +45,7 @@ class Position{
         })
         // 加载异步数据后加载轮播
         new RunSwiper()
+        this.bindEvent();
     }
     render(){
         // 加载position路由结构
@@ -54,6 +56,26 @@ class Position{
         // better-scroll;
         // new BScroll.default('main',{});
     }
-    
+    bindEvent(){
+        $('.Thumbnail.comic-box').on('tap',this.handleHash);
+        $('.Thumbnail.set-auto').on('tap',this.handlChanneleHash)
+        $('.list-link').on('tap',this.handleListHash);
+        $('.channel-link').on('tap',this.handleListHash);
+    }
+    handleHash(e){
+        e.preventDefault();
+        let data_id = $(this).attr('data-to')
+        location.hash = 'details/' + data_id;
+    }
+    handlChanneleHash(e){
+        e.preventDefault();
+        let data_id = $(this).attr('data-to')
+        location.hash = 'channel/' + data_id;
+    }
+    handleListHash(e){
+        e.preventDefault();
+        let data_id = $(this).attr('data-to');
+        location.hash = 'catalogs/' + data_id;
+    }
 }
 export default new Position()

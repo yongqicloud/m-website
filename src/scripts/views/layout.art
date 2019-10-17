@@ -43,5 +43,14 @@
                 
             </div>
         </div>
+        <footer>
+            <div class="content">
+                <button>客户端</button>
+                <i class="logo-cat"></i>
+                <button>返回顶部</button>
+            </div>
+            <div class="bottom">MissEvan弹幕音频网 京ICP备:14055174号-1</div>
+        </footer>
     </main>
+    
 </div>

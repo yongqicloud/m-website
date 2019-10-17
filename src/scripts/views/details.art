@@ -1,0 +1,185 @@
+<div id="SoundPage">
+    <div id="SoundPlayer">
+        <div class="video">
+            <div class="cover" style="background-image: url(https://static.missevan.com/mosaic/{{details.sound.cover_image}});">
+                <div class="record-disk" >
+                    <div class="disk-cover" style="background-image: url({{details.sound.front_cover}});"></div>
+                </div>
+            </div>
+            {{if details.sound.videourl}}
+                <video preload src="{{details.sound.videourl}}" preload="auto" >
+                    <source src="{{details.sound.videourl}}">
+                    暫不支持該格式!
+                </video>
+            {{else}}
+                <audio preload="auto" src="http://sc1.111ttt.cn/2018/1/03/13/396131232171.mp3" >
+                    <source src="http://sc1.111ttt.cn/2018/1/03/13/396131232171.mp3">
+                    暂不支持此格式
+                </audio>
+            {{/if}}
+        </div>
+        <div class="controller">
+            <div class="btn-icon btn-play"></div>
+        </div>
+        <div class="danmaku-send-wrap">
+            <div class="danmaku-send">
+                <form class="danmaku-input">
+                    <input type="text" class="text-area" placeholder="来点弹幕啊~">
+                    <input type="submit" class="btn-send" value="发送">
+                </form>
+                <button class="btn-toggle dm on"></button>
+                <button class="btn-toggle full"></button>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="loaded"></div>
+            <div class="played">
+                <div class="thumb draggable"></div>
+            </div>
+        </div>
+        <div class="sound-time">
+                <span class="played-time">00:00</span>
+                <span class="duration">{{details.sound.duration}}</span>
+        </div>
+    </div>
+    <div class="sound-action-container">
+        <ul class="sound-action">
+            <li class="share">
+                <i></i>
+                <span>分享</span>
+            </li>
+            <li class="like">
+                <i></i>
+                <span>喜欢</span>
+            </li>
+            <li class="download">
+                <i></i>
+                <span>下载</span>
+            </li>
+        </ul>
+        <div class="btn-larger btn-red btn-open-in-client">用客户端打开</div>
+    </div>
+    <div class="Tabs">
+        <ul class="tab-list divider">
+            <li class="tab active">
+                简介
+            </li>
+            <li class="tab">评论</li>
+            <li class="tab">图片</li>
+        </ul>
+        <div class="tab-content">
+            <div id="SoundIntro">
+                <div class="sound-info">
+                    <h3 class="title">{{details.sound.soundstr}}</h3>
+                    <ul class="status">
+                        <li class="icon icon-play-times">{{details.sound.view_count_formatted}}</li>
+                        <li class="icon icon-comments">{{details.sound.all_comments}}</li>
+                        <li class="">音频ID:{{details.sound.id}}</li>
+                    </ul>
+                    <div class="intro-container">
+                        <div class="intro">
+                            <p>简介</p>
+                            <div>
+                                {{html}}
+                            </div>
+                        </div>
+                        <span class="btn-text btn-expand"></span>
+                    </div>
+                </div>
+                {{if dramaby !== null}}
+                    <div class="sound-drama">
+                        <a href="javascript:void(0)" class="drama-cover">
+                            <img src="{{dramaby.drama.cover}}" alt="">
+                        </a>
+                        <a href="javascript:void(0)" class="drama-details">
+                            <div class="drama-title">{{dramaby.drama.name}}</div>
+                            <div class="drama-type">{{dramaby.drama.catalog_name}} 类型:{{dramaby.drama.type_name}}</div>
+                            <div class="drama-latest-update">更新至 {{dramaby.drama.newest}}</div>
+                        </a>
+                        <div class="btn-base btn-attention btn-subscribe"></div>
+                    </div>
+                    {{if dramaby.cvs.length >= 1}}
+                    <div class="sound-cv">
+                        <div class="title">参演 CV ({{dramaby.cvs.length}})</div>
+                        <div class="cvs-container">
+                            <div class="cvs-block">
+                                {{each dramaby.cvs}}
+                                <div class="Thumbnail cv-in-sound">
+                                    <img src="{{$value.cvinfo.icon}}" class="cover" alt="">
+                                    <div class="name">{{$value.cvinfo.name}}</div>
+                                    <div class="character">饰：{{$value.character}}</div>
+                                    <div class="group">{{$value.cvinfo.group}}</div>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <span class="btn-text btn-expand"></span>
+                        </div>
+                    </div>
+                    {{/if}}
+                {{/if}}
+                <div class="sound-user">
+                    <a href="javascript:void(0)" class="avatar">
+                        <img src="{{details.user.icon}}" alt="">
+                    </a>
+                    <div class="user-sound-info">
+                        <a href="javascript:void(0)" class="username">{{details.sound.username}}</a>
+                        <p class="publish-time">发布于:{{details.sound.create_time}}</p>                        
+                    </div>
+                    <div class="btn-base btn-attention"></div>
+                </div>
+                <div class="sound-related">
+                    {{if sound_like.dramas.length >= 1}}
+                    <div class="sound-block sound-dramas">
+                        <div class="section">剧集推荐</div>
+                        <div class="sound-container">
+                            {{each sound_like.dramas}}
+                            <a href="javascript:void(0)" class="re-drama">
+                                <div class="cover" style="background-image: url({{$value.front_cover}});"></div>
+                                <div class="title">{{$value.name}}</div>
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    {{if sound_like.channels.length >= 1}}
+                    <div class="sound-block sound-channels">
+                        <div class="section">包含该音频的频道</div>
+                        <div class="sound-container">
+                            {{each sound_like.channels}}
+                            <a href="javascript:void(0)" class="Thumbnail channel">
+                                <div class="cover" style="background-image: url({{$value.smallpic}});">
+                                    <div class="follow">
+                                        <span>{{$value.follow_num}}</span>
+                                    </div>
+                                </div>
+                                <div class="title">{{$value.name}}</div>
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    {{if sound_like.sounds.length >= 1}}
+                    <div class="sound-block sound-sounds">
+                        <div class="section">相似音频</div>
+                        <div class="sound-container">
+                            {{each sound_like.sounds}}
+                            <a href="javascript:void(0)" class="Thumbnail sound comic-box">
+                                <img src="{{$value.front_cover}}" alt="" class="cover">
+                                <div class="title">{{$value.soundstr}}</div>
+                                <div class="detail">
+                                    <span class="item play-times">{{$value.view_count}}</span>
+                                    <span class="item comments">{{$value.all_comments}}</span>
+                                </div>
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

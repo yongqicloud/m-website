@@ -1,19 +1,7 @@
 const searchView = require('../views/search.art');
 const hotsearchModel = require('../models/hotsearch');
 const inputWordsListModel = require('../views/inputWordsList.art');
-// 节流
-function throttling(fn) {
-    let canRun = true; // 标记
-    return function () {
-        if (!canRun) return; // 在函数开头判断标记是否为true，不为true则return
-        canRun = false; // 开始节流
-        setTimeout(() => { // 将外部传入的函数的执行放在setTimeout中
-            // 对要节流的函数进行操作;
-            fn.apply(this, arguments);
-            canRun = true; // 节流结束
-        }, 500);
-    };
-}
+
 // 去抖
 function antiShake(fn) {
     let timeout = null; // 创建一个标记用来存放定时器的返回值
@@ -36,7 +24,7 @@ class Search{
         let searchHTML = searchView({
             list : resultHotWords.info
         });
-        $('.tab-content').html(searchHTML);
+        $('main .list-container .tab-content').html(searchHTML);
         this.bindEvent();
     }
     bindEvent(){

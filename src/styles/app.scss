@@ -1,4 +1,5 @@
-@import './modules/reset';
+// @import './modules/reset';
+@import './yo/usage/core/reset.scss';
 @import './modules/common';
 @import './modules/index.scss';
 @import './modules/variable';
@@ -7,3 +8,7 @@
 @import './modules/classification.scss';
 @import './modules/defaultloading';
 @import './modules/search.scss';
+@import './modules/details.scss';
+@import './modules/album';
+@import './modules/channel';
+@import './modules/catalogs';

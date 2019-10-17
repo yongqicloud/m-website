@@ -1,6 +1,6 @@
 <div class="catalogs">
     {{each list}}
-    <a href="" class="catalog">
+    <a href="javascript:void(0)" class="catalog" data-to="{{$value.id}}">
         <span class="catalog-icon" style="background-image: url({{$value.pic}})"></span>
         <span class="catalog-title">{{$value.title}}</span>
     </a>
