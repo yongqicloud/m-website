@@ -14,6 +14,8 @@ class Details{
         this.$player = $('video')[0] || $('audio')[0];
         this.currentTime = 0;
         this.duration = 0;
+        this.$progessBar = 
+        this.clientWidth = window.innerWidth
     }
     async render(page_id){
         let result_details = await detailsModels.get(page_id);
@@ -83,27 +85,43 @@ class Details{
         let $player = $('video')[0] || $('audio')[0];
         $('.btn-expand').on('tap',this.expend);
         $('#SoundPlayer').on('tap',this.showBar);
-        $('.controller').on('touchend',{page_id:page_id},this.videoPlay);
+        $('.controller').on('tap',this.videoPlay.bind(this));
         $('.full').on('touchend',this.expandFull);
-        $player.addEventListener("timeupdate",this.handelTime);
-        $('.thumb.draggable').on('touchstart',this.draggle)
+        this.$player.addEventListener("timeupdate",this.handelTime);
+        $('.thumb.draggable .cover').on('touchstart',this.draggle.bind(this))
+        $('.progress-bar').on('touchend',this.draggleMove.bind(this))
+        $('.danmaku-send-wrap').on('tap',function(evt){
+            evt.stopPropagation()
+        })
+    }
+    draggleMove(evt){
+        evt.stopPropagation()
+        let pageX = evt.changedTouches[0].pageX;
+        let $progessBar = $('.played');
+        let rate = pageX / this.clientWidth
+        let duration = this.$player.duration;
+        $progessBar.css({
+            width : rate * this.clientWidth
+        })
+        this.$player.currentTime = parseInt(rate * duration);
+        this.$player.play()
+        $('.controller').children('.btn-icon').removeClass('btn-play').addClass('btn-pause')
     }
     draggle(e){
-        let clientWidth = window.innerWidth;
-        let $player = $('video')[0] || $('audio')[0];
+        let {target} = e
         let $progessBar = $('.played');
-        let duration = $player.duration;
-        $(this).on('touchmove',_.throttle( function(evt){
-            let pageX = evt.changedTouches[0].pageX;
-            let rate = pageX / clientWidth;
+        this.duration = this.$player.duration;
+        let pageX , rate
+        $(target).on('touchmove', _.throttle(function(evt){
+            pageX = evt.changedTouches[0].pageX;
+            rate = pageX / this.clientWidth;
             $progessBar.css({
-                width : rate * clientWidth
+                width : rate * this.clientWidth
             })
-            $player.currentTime = parseInt(rate * duration);
-        },150));
-        
-    }
-    draggleMove(){
+            this.$player.currentTime = parseInt(rate * this.duration)
+            this.$player.play()
+            $('controller').children('.btn-icon').removeClass('btn-play').addClass('btn-pause')
+        }.bind(this),200));
     }
     handelTime(){
         let $player = $('video')[0] || $('audio')[0];
@@ -137,28 +155,30 @@ class Details{
         $(this).parent().toggleClass('expand');
     }
     showBar(evt){
-        evt.stopPropagation()
         $('.controller').toggleClass('up');
         $('.danmaku-send').toggleClass('show');
     }
     videoPlay(evt){
         evt.stopPropagation()
+        let {target} = evt 
         let $player = $('video')[0] || $('audio')[0];
+        let name = $('video').attr('name')
         if($player.tagName === 'VIDEO'){
-            $('.video').children('.cover').css({
-                display : 'none'
-            })
+            if(name === 'video'){
+                $('.video').children('.cover').css({
+                    display : 'none'
+                })
+            }
         }else if($player.tagName === 'AUDIO'){
             console.log('这是音频标签');
-        }
+        }   
         if($player.paused){
-            $player.play();
-            $(this).children('.btn-icon').removeClass('btn-play').addClass('btn-pause')
+            $player.play()
+            $(target).removeClass('btn-play').addClass('btn-pause')
         }else{
-            $player.pause();
-            $(this).children('.btn-icon').removeClass('btn-pause').addClass('btn-play')
+            $player.pause()
+            $(target).removeClass('btn-pause').addClass('btn-play')
         }
-        // this.loadImage(evt.data.page_id)
     }
     expandFull(evt){
         evt.stopPropagation();

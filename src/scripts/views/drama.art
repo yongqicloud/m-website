@@ -1,0 +1,51 @@
+<div id="DramaDetail">
+    <div class="Wall drama-wall">
+        <div class="wall-body">
+            <span class="drama-title">
+                    装作若无其事的吻
+            </span>
+        </div>
+        <div class="wall-warp blur" style="background-image: url(https://static.missevan.com/dramacoversmini/{{list.drama.cover}});">
+
+        </div>
+    </div>
+    <div class="drama-avatar" style="background-image: url(https://static.missevan.com/dramacoversmini/{{list.drama.cover}})">
+        <h3 class="view-count">222</h3>
+    </div>
+    <div class="drama-detail complete">
+        <p class="detail-author">原创  {{list.drama.author}}</p>
+        <p class="detail-type">类型：{{list.drama.type}}</p>
+        <p class="detail-type">已完结</p>
+
+    </div>
+    <div class="drama-episodes">
+        <h3 class="callout">
+            <span>选集</span>
+            <a href="javascript:void(0)">全部</a>
+        </h3>
+        <div class="drama-content">
+            <div class="scroll-content">
+                {{each list.episodes.episode}}
+                <a class="drama-episode" data-to="{{$value.sound_id}}">
+                    <div>{{$value.name}}</div>
+                </a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="drama-episodes">
+        <h3 class="callout">
+            <span>简介</span>
+        </h3>
+        <div class="intro-content">
+            {{list.drama.abstract}}
+        </div>
+        <button class="btn-text black unfold-btn">展开</button>
+        <div class="tags-container">
+            {{each list.drama.tags}}
+            <span class="intro-tag">{{$value.name}}</span>
+            {{/each}}
+        </div>
+    </div>
+    
+</div>

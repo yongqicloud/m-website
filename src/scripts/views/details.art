@@ -7,15 +7,15 @@
                 </div>
             </div>
             {{if details.sound.videourl}}
-                <video preload src="{{details.sound.videourl}}" preload="auto" >
+                <video name = "video" preload src="{{details.sound.videourl}}" preload="auto" >
                     <source src="{{details.sound.videourl}}">
                     暫不支持該格式!
                 </video>
             {{else}}
-                <audio preload="auto" src="http://sc1.111ttt.cn/2018/1/03/13/396131232171.mp3" >
-                    <source src="http://sc1.111ttt.cn/2018/1/03/13/396131232171.mp3">
-                    暂不支持此格式
-                </audio>
+                <video name = media>
+                    <source src="http://m10.music.126.net/20191021151834/fe3ba92c09dce3674d528db014dac46b/yyaac/0e0c/070b/040f/9f1b44c2a90a10ca46523e38b46fa985.m4a" 
+                    type="audio/mp4">
+                </video>
             {{/if}}
         </div>
         <div class="controller">
@@ -34,7 +34,9 @@
         <div class="progress-bar">
             <div class="loaded"></div>
             <div class="played">
-                <div class="thumb draggable"></div>
+                <div class="thumb draggable">
+                    <div class="cover"></div>
+                </div>
             </div>
         </div>
         <div class="sound-time">

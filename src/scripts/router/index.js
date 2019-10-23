@@ -9,7 +9,11 @@ import detailsControllor from '../controllers/details'; //详情页
 import albumControllor from '../controllers/album';  //戏剧列表
 import channelControllor from '../controllers/channel'; //广播
 import catalogsControllor from '../controllers/catalogs' // 展示更多
-
+import rankControllor from '../controllers/rank'; //排行榜
+import searchResControllor from '../controllers/searchRes' ; //搜索结果
+import dramasControllor from '../controllers/drama';
+// dramsControllor.render()
+// rankControllor.render();
 class Router{
     constructor(){
         this.render();
@@ -38,7 +42,10 @@ class Router{
             detailsControllor,
             albumControllor,
             channelControllor,
-            catalogsControllor
+            catalogsControllor,
+            rankControllor,
+            searchResControllor,
+            dramasControllor
         }
         pageControllers[hash+'Controllor'].render(page_id);
     }
@@ -51,15 +58,12 @@ class Router{
         this.setActiveClass(str[0]);
     }
     handleHashchange(e){
-        
         let hash = location.hash.slice(1);
         // let reg = new RegExp('^(\\w+)','g');
         let str = hash.split('/')
         console.log(str);
         // let path = reg.exec(hash);
-        
         // console.log(path);
-        
         defaultloadingController.render(str[0]);
         this.renderDOM(str[0],str[1]);
         this.setActiveClass(str[0],str[1]);

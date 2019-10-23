@@ -1,1 +1,5 @@
-<div class="loading-box">我们正在努力加载! 请稍等...</div>
+<div class="loading-box">
+    <div class="img-box">
+
+    </div>
+</div>

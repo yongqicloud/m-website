@@ -20,14 +20,19 @@ class Position{
 
         let result_comic = result_info.info.channel;
         let result_sound = result_info.info.sound;
-        console.log(result_sound);
         let result_banner = result_info.info.banner;
         // console.log(result_list,result_comic,result_sound,result_banner);
+        let urlArr = []
+        let reg =  /\/(\d+)$/
+        result_banner.forEach((item) => {
+            urlArr.push(~~item.url.match(reg)[1])
+        })
         let positionLoopHtml = positionLoopView({
             list  : result_list,
             comic : result_comic,
             sound : result_sound,
             banner : result_banner,
+            urlArr : urlArr
         })
         // console.log($('tab-content')[0]);
         $('.list-container .tab-content').html(positionLoopHtml);
@@ -43,6 +48,8 @@ class Position{
             num = num > 9999 ? (num/10000).toFixed(1)+'万':num
             item.innerHTML = num;
         })
+        
+        
         // 加载异步数据后加载轮播
         new RunSwiper()
         this.bindEvent();
@@ -58,9 +65,11 @@ class Position{
     }
     bindEvent(){
         $('.Thumbnail.comic-box').on('tap',this.handleHash);
+        $('.banner-link').on('tap',this.handleHash);
         $('.Thumbnail.set-auto').on('tap',this.handlChanneleHash)
         $('.list-link').on('tap',this.handleListHash);
         $('.channel-link').on('tap',this.handleListHash);
+        $('.leaderboard').on('tap',this.handleRankHash);
     }
     handleHash(e){
         e.preventDefault();
@@ -76,6 +85,10 @@ class Position{
         e.preventDefault();
         let data_id = $(this).attr('data-to');
         location.hash = 'catalogs/' + data_id;
+    }
+    handleRankHash(e){
+        e.preventDefault();
+        location.hash = 'rank/' 
     }
 }
 export default new Position()

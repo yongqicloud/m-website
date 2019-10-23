@@ -4,7 +4,7 @@
                 <div class="swiper-wrapper">
                     {{each banner}}
                     <div class="swiper-slide">
-                        <a href="{{$value.url}}" data-to="{{$value.url}}" class="banner-link" style="background-image: url({{$value.pic}})">
+                        <a href="javascript:void(0)" data-to="{{urlArr[$index]}}" class="banner-link" style="background-image: url({{$value.pic}})">
 
                         </a>
                     </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="panel-nav">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" class="leaderboard">
                         排行榜
                         <em></em>
                     </a>

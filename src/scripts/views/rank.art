@@ -1,0 +1,30 @@
+<div id="RankPage">
+    <div class="sub-header">排行榜</div>
+    <div class="set-overflow">
+        {{each rank}}
+        <a class="rank-part" data-to="{{$value.album.id}}">
+            <div class="Thumbnail album">
+                <div class="album-cover-bg"></div>
+                <div class="cover" style="background-image: url(https://static.missevan.com/coversmini/{{$value.album.cover_image}});">
+                    <div class="sound-num">
+                        <span>{{$value.album.music_count}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rank-list">
+                {{each $value.sounds}}
+                <p class="rank-item">{{$index + 1}}:{{$value.soundstr}}</p>
+                {{/each}}
+            </div>
+        </a>
+        {{/each}}
+        <footer>
+            <div class="content">
+                <button>客户端</button>
+                <i class="logo-cat"></i>
+                <button>返回顶部</button>
+            </div>
+            <div class="bottom">MissEvan弹幕音频网 京ICP备:14055174号-1</div>
+        </footer>
+    </div>
+</div>

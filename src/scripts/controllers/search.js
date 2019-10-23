@@ -1,55 +1,52 @@
 const searchView = require('../views/search.art');
 const hotsearchModel = require('../models/hotsearch');
 const inputWordsListModel = require('../views/inputWordsList.art');
-
-// 去抖
-function antiShake(fn) {
-    let timeout = null; // 创建一个标记用来存放定时器的返回值
-    return function () {
-        clearTimeout(timeout); // 每当用户输入的时候把前一个 setTimeout clear 掉
-        timeout = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
-            fn.apply(this, arguments);
-        }, 500);
-    };
-}
+const _ = require('lodash');
 class Search{
     constructor(){
         this.lock = true;
     }
     async render(){
-        let resultHotWords = await hotsearchModel.get();
-        
-        resultHotWords = JSON.parse(resultHotWords);
-        // console.log(resultHotWords);
+        let resultHotWords = await hotsearchModel.get()
+        resultHotWords = JSON.parse(resultHotWords)
         let searchHTML = searchView({
             list : resultHotWords.info
-        });
+        })
         $('main .list-container .tab-content').html(searchHTML);
         this.bindEvent();
     }
     bindEvent(){
-        $('input').on('input',antiShake(this.searchInput))
+        $('input').on('input',_.debounce(this.searchInput.bind(this),300))
+        $('.search-tag').on('tap',this.handlHotWordseHash)
     }
-    async searchInput(){
-        let input_value = $('input').val();
-        console.log(input_value);
+    async searchInput(evt){
+        let {target} = evt;
+        let input_value = $(target).val();
         if(input_value === ''){
             console.log('移除成功');
             $('.suggest-keyword').remove();
         }else{
             let resultInputWords = await hotsearchModel.search(input_value);
             resultInputWords = resultInputWords.info
-            // console.log(resultInputWords);
             if(resultInputWords instanceof Array){
                 let inputWordsHTML = inputWordsListModel({
                     keywords : input_value,
                     suggestWords : resultInputWords
                 })
                 $(inputWordsHTML).appendTo('header')
+                $('.suggest-item').on('tap',this.handleHash)
+                
             }
-            
         }
-        
+    }
+    handleHash(){
+        let input_val = $(this).children('.item-content').html()
+        $('.suggest-keyword').remove();
+        location.hash = 'searchRes/' + input_val;
+    }
+    handlHotWordseHash(){
+        let input_val = $(this).html()
+        location.hash = 'searchRes/' + input_val;
     }
 }
 export default new Search();

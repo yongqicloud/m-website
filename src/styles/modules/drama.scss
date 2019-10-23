@@ -1,0 +1,211 @@
+#DramaDetail{
+    position: relative;
+    .Wall.drama-wall{
+        width: 100%;
+        height: 216px;
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(0,0,0,.5);
+        .wall-body{
+            width: 100%;
+            height: 100%;
+            padding: .22rem .1rem;
+            text-align: center;
+            .drama-title{
+                width: 100%;
+                height: .42rem;
+                line-height: .21rem;
+                font-size: .16rem;
+                position: relative;
+                z-index: 1;
+                color: #fff;
+                @include ellipsis(null,2)
+            }
+        }
+        .wall-warp.blur{
+            position: absolute;
+            left: -.2rem;
+            right: -.2rem;
+            top:-.2rem;
+            bottom: -.2rem;
+            background-image: url(https://static.missevan.com/dramacoversmini/201909/01/93f30e0beeb6c5afe31ee6be55d8e91f223541.jpg) ;
+            background-position: 50%;
+            z-index: 0;
+            background-size: 100% 100%;
+            filter: blur(.2rem);
+        }
+    }
+    .drama-avatar{
+        width: 1.84rem;
+        height: 1.84rem;
+        
+        top: .64rem;
+        left: calc(50% - .92rem);
+        right: 0;
+        border-radius: .04rem;
+        @include border(2px,#fff);
+        background: url(https://static.missevan.com/dramacoversmini/201909/01/93f30e0beeb6c5afe31ee6be55d8e91f223541.jpg) no-repeat;
+        position: absolute;
+        background-size:cover ;
+        .view-count{
+            position: absolute;
+            bottom: 0;
+            height: .4rem;
+            width: 100%;
+            padding: 20px 10px 20px 30px;
+            color: #fff;
+            background: linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.3));
+            &::after{
+                content: "";
+                display: block;
+                width: .14rem;
+                height: .11rem;
+                position: absolute;
+                top: .23rem;
+                left: .1rem;
+                background: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.1592535d.png) no-repeat;
+                background-position: -2.47rem -1.74rem;
+                background-size: 2.62rem 2.34rem;
+            }
+        }
+    }
+    .drama-detail.complete{
+        width: 100%;
+        height: .56rem;
+        margin-top: .46rem;
+        text-align: center; 
+        font-size: .12rem;
+        color: #757575;
+        p{
+            margin-bottom: .04rem;
+        }
+        .detail-author{
+            height: .12rem;
+            line-height: .12rem;
+        }
+        .detail-type{
+            height: .16rem;
+            line-height: .16rem;
+
+        }
+    }
+    .drama-episodes{
+        width: 100%;
+        padding: .1rem .12rem;
+        position: relative;
+        .callout{
+            margin: .1rem 0;
+            display: flex;
+            justify-content: space-between;
+            font-weight: normal;
+            font-size: .12rem;
+            color: #757575;
+            span{
+                display: block;
+                padding-left: .1rem;
+                height:100%;
+                @include border(0 0 0 4px,#000)
+                
+            }
+            a{
+                display: block;
+                padding-right: .15rem;
+                height: 100%;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    box-sizing: border-box;
+                    top: .04rem;
+                    right: .03rem;
+                    display: block;
+                    width: .1rem;
+                    height: .1rem;
+                    border-right: 2px solid #757575;
+                    border-bottom: 2px solid #757575;
+                    transform: rotate(-45deg);
+
+                }
+                
+            }
+        }
+        .drama-content{
+            width: 100vw;
+            height: .56rem;
+            padding-left: .12rem;
+            position: relative;
+            left: -.12rem;
+            overflow-x: auto;
+            .scroll-content{
+                height: 100%;
+                display: flex;
+                position: relative;
+                white-space: nowrap;
+                .drama-episode{
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    width: 1.06rem;
+                    height: .56rem;
+                    padding: .08rem;
+                    line-height: .56rem;
+                    text-align: center;
+                    color: #616161;
+                    background: #fff;
+                    margin-left: .1rem;
+                    border-radius: .04rem;
+                    
+                    
+                    @include border(1px,#e0e0e0);
+                    >div{
+                        width: 100%;
+                        color: #616161;
+                        font-size: .13rem;
+                        @include ellipsis(null,1);
+                    }
+                    
+                }
+                .drama-episode::first-child{
+                    margin: 0;
+                }
+            }
+        }
+        .intro-content{
+            width: 100%;
+            height: .54rem;
+            line-height: .18rem;
+            
+            color: #757575;
+            font-size: .12rem;
+            @include ellipsis(null,3)
+        }
+        .btn-text.black.unfold-btn{
+            border: none;
+            background: transparent;
+            width: 100%;
+            height: .16rem;
+            text-align: center;
+            line-height: .56erm;
+            color: #757575;
+            font-size: .12rem;
+            text-shadow: 2px 2px wheat;
+        }
+        .tags-container{
+            width: 100%;
+            .intro-tag{
+                position: relative;
+                height: 26px;
+                box-sizing: border-box;
+                font-size: 12px;
+                line-height: 16px;
+                background-color: #fff;
+                display: inline-block;
+                border-radius: 100px;
+                border: 1px solid #e0e0e0;
+                color: #616161;
+                padding: 4px 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

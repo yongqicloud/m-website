@@ -3,8 +3,7 @@ const {
     series,
     src,
     dest,
-    parallel,
-    watch
+    parallel
 } = require("gulp");
 const sass = require('gulp-sass');
 const webpack = require("webpack-stream");

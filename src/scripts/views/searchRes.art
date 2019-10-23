@@ -1,0 +1,48 @@
+<div class="Tabs sound" id="SearchPage">
+    <ul class="tab-list light black">
+        <li class="tab active">综合</li>
+        <li class="tab">剧集</li>
+        <li class="tab">直播</li>
+        <li class="tab">音单</li>
+        <li class="tab">UP主</li>
+    </ul>
+    <div class="search-drama-list">
+        {{each topList.Datas}}
+        {{if $index <= 2}}
+        <a href="javascript:void(0)" class="Thumbnail list-drama" data-to="{{$value.id}}">
+            <img class="cover" src="{{$value.cover}}" alt="">
+            <div class="detail">
+                <div class="name">{{$value.name}}</div>
+                <div class="drama-types">
+                    <span>{{$value.catalog_name}}</span>
+                    <span>类型：{{$value.type_name}}</span>
+                </div>
+                <div class="update-detail">
+                    <span class="status">{{$value.newest}}</span>
+                </div>
+            </div>
+        </a>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{if topList.Datas.length >= 1}}
+    <div class="search-drama-more">
+        <span>查看更多</span>
+    </div>
+    {{/if}}
+    {{each allList.Datas}}
+    <div class="Thumbnail list-sound ">
+        <div class="cover">
+            <img src="{{$value.front_cover}}" alt="">
+        </div>
+        <a href="javascript:void(0)" class="detail" data-to="{{$value.id}}">
+            <div class="title">{{$value.soundstr}}</div>
+            <div class="username">UP主：{{$value.username}}</div>
+            <div class="statistics">
+                <span class="item play-times">{{$value.view_count_formatted}}</span>
+                <span class="item duration">{{$value.duration}}</span>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</div>

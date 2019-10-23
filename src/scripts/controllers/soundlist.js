@@ -26,6 +26,7 @@ class Sound{
         $('.sound-plate .panel-body').html(loopHTML);
         this.bindEvent();
         // new BSscroll.default('main',{});
+        
     }
     bindEvent(){
         $('.Thumbnail').on('tap',this.handleHash);

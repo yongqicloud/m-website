@@ -6,7 +6,7 @@
     </div>
     <ul class="suggest-list">
         {{each suggestWords}}
-        <a href="" class="suggest-item">
+        <a href="javascript:void(0)" class="suggest-item">
             <i class="search-icon"></i>
             <div class="item-content">{{$value}}</div>
         </a>

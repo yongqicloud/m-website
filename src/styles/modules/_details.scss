@@ -199,6 +199,15 @@
                     border-radius: 50%;
                     border: .04rem solid rgba(0,0,0,.3);
                     z-index: 999;
+                    & .cover{
+                        position: absolute;
+                        left:-.06rem;
+                        right:-.06rem;
+                        top:-.06rem;
+                        bottom: -0.06rem;
+                        background: transparent;
+                        border-radius: 50%;
+                    }
                     &::before{
                         content: "";
                         position: absolute;
