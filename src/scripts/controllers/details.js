@@ -129,6 +129,10 @@ class Details{
         let totalTime = Math.floor($player.duration)
         let dateCurr = moment.unix(currentTime);
         let dateTol = moment.unix(totalTime);
+        // console.log(dateCurr,dateTol)
+        if(dateCurr === dateTol){
+            console.log('播放结束')
+        }
         let currArr = {
             minute : dateCurr.format('mm'),
             second : dateCurr.format('ss')
@@ -148,7 +152,11 @@ class Details{
         })
         $('.sound-time .played-time').html(`${currArr.minute}:${currArr.second}`)
         $('.sound-time .duration').html(`${tolArr.minute}:${tolArr.minute}`)
-            
+        if($player.ended){
+            $player.currentTime = 0
+            $player.pause()
+            $('.controller').children('div').removeClass('btn-pause').addClass('btn-play')
+        }    
     }
     expend(evt){
         evt.preventDefault()
@@ -171,8 +179,12 @@ class Details{
             }
         }else if($player.tagName === 'AUDIO'){
             console.log('这是音频标签');
-        }   
-        if($player.paused){
+        }
+        if($player.ended){
+            $player.currentTime = 0
+            $player.pause()
+            $(target).removeClass('btn-pause').addClass('btn-play')
+        }else if($player.paused){
             $player.play()
             $(target).removeClass('btn-play').addClass('btn-pause')
         }else{

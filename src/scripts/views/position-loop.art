@@ -67,7 +67,7 @@
                 <a href="javascript:void(0)" class="Thumbnail set-auto" data-to={{$value.id}}>
                     <div class="img-box" style="background-image: url('{{$value.smallpic}}')">
                         <div class="follow">
-                            <span>{{$value.follow_num}}</span>
+                            <span class="play-times">{{$value.follow_num}}</span>
                         </div>
                     </div>
                     <div class="title">{{$value.name}}</div>

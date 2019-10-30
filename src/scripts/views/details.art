@@ -12,10 +12,13 @@
                     暫不支持該格式!
                 </video>
             {{else}}
-                <video name = media>
+                <audio>
+                    <source src="http://sc1.111ttt.cn/2018/1/03/13/396131226156.mp3">
+                </audio>
+                <!-- <video name = media>
                     <source src="http://m10.music.126.net/20191021151834/fe3ba92c09dce3674d528db014dac46b/yyaac/0e0c/070b/040f/9f1b44c2a90a10ca46523e38b46fa985.m4a" 
                     type="audio/mp4">
-                </video>
+                </video> -->
             {{/if}}
         </div>
         <div class="controller">
