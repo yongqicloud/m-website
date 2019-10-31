@@ -8,7 +8,6 @@ class Classification{
         let classificationHTML = classificationView({
             list : result.info
         });
-        console.log(result.info);
         $('.list-container .tab-content').html(classificationHTML);
         this.bindEvent()
     }

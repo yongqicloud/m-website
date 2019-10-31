@@ -5,7 +5,6 @@ class Rank{
     async render(){
         let rankResult = await rankModel.get();
         rankResult = rankResult.info
-        console.log(rankResult);
         let rankHTML = rankView({
             rank : rankResult
         });

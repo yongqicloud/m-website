@@ -23,7 +23,6 @@ class Index{
             $('#UserBar').css({
                 left : '100%'
             })
-            console.log(111);
         }else{
             $('#UserBar').css({
                 left : 0

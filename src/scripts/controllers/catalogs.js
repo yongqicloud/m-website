@@ -7,11 +7,10 @@ class Catalogs{
         // page_id = 5;
         let choosePageList = await catalogsModel.getDefault();
         let allDynamic = await catalogsModel.getAllDynamic(page_id);
-        console.log(allDynamic);
-        console.log(choosePageList);
-        console.log(choosePageList.info[5]);
+        // console.log(allDynamic);
+        // console.log(choosePageList);
         let info = choosePageList.info[5];
-        console.log(info.son);
+        // console.log(info.son);
         let indexArr = []
         for(let item in info.son){
             indexArr.push(item)
@@ -20,7 +19,6 @@ class Catalogs{
         for(let item in info.son){
             infoArr[item] = await catalogsModel.get(item);
         }
-        console.log(infoArr);
         let index = indexArr[0]
         let catalogsResult = await catalogsModel.get();
         let catalogsHTML = catalogsView({

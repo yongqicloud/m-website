@@ -5,7 +5,6 @@ class Drama{
         // let page_id = 1910
         let dramaResult = await dramaModel.get(page_id); 
         let insertHTML = dramaResult.info.drama.abstract
-        console.log(dramaResult);
         let dramaHTML = dramaView({
             list : dramaResult.info
         })

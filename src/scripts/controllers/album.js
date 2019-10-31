@@ -6,7 +6,7 @@ class Album{
         let result_album = await albumModel.get(page_id);
         result_album = result_album.info;
 
-        console.log(result_album);
+        // console.log(result_album);
         let albumHTML = albumView({
             list : result_album
         }); 

@@ -4,11 +4,6 @@ const _ = require('lodash');
 const moment = require('moment');
 moment.locale("zh-cn");
 
-// console.log(moment().format("YYYY"-'MM'-'SS'));
-// console.log(moment().format('ddd'));
-// console.log(moment.duration(360, 'minute')._data);
-// console.log(moment().seconds(0));
-// moment().format(Date.now());
 class Details{
     constructor(){
         this.$player = $('video')[0] || $('audio')[0];
@@ -63,8 +58,6 @@ class Details{
         this.bindEvent();
     }
     async loadImage(page_id){
-        console.log(this.$player);
-        console.log(this.currentTime,this.duration);
         let result_sortedImage = await detailsModels.getSortedImage(page_id)
         console.log(result_sortedImage);
         // 判断信息是否存在

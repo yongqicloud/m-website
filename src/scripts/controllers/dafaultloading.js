@@ -3,8 +3,6 @@ import album from './album';
 const defaultloadingView = require('../views/defaultloading.art');
 class Loading{
     render(str){
-        console.log(str);
-        // console.log($('main .list-container .tab-content'));
         let loadingHTML = defaultloadingView({});
         if(str === 'details' || str === 'album' || str === 'search' || str === 'channel' || str ==='searchRes'|| str === 'dramas' ){
             $('main .list-container .tab-list').css({

@@ -2,13 +2,10 @@ const searchResView = require('../views/searchRes.art');
 const searchResModel = require('../models/searchResModel');
 class SearchRes{
     async render(value){
-        console.log(value);
         let topResult = await searchResModel.getinputVal(value)
         let allResult = await searchResModel.getsearch({
             value
         })
-        console.log(topResult);
-        console.log(allResult);
         let searchResHTML = searchResView({
             topList : topResult.info,
             allList : allResult.info
